@@ -1,0 +1,50 @@
+<div class="home-content-wrapper">
+
+    <div ng-controller="player_info as player">
+        <!--<script>console.log(player);</script>-->
+        <!-- how to bind AND use a placeholder??? -->
+        <input ng-model="player.defaults.name" placeholder="placeholder"/>
+
+        <h2>{{ player.defaults.name }}</h2>
+    </div>
+    <!--
+    Use the UI Router to setup the file heirarchy
+    Watch the Egghead IO architecture demo to set that up
+    Controllers should be applied to different sections, not the body
+    Watch the Gulp demo to setup gulp automation with scss...
+    -->
+
+    <!--<div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">-->
+
+    <div class="row" ng-controller="character_info as character">
+
+        <h3 class="dbz-steps"><span>1</span> Choose Main Personality</h3>
+
+        <div class="small-6 columns">
+
+            <h4>Player One</h4>
+
+            <form>
+
+                <select name="character">
+                    <option ng-repeat="character in character.characters">{{ character.name }}</option>
+                </select>
+
+            </form>
+        </div>
+
+        <div class="small-6 columns">
+            <h4>Player Two</h4>
+
+            <form>
+
+                <select name="character">
+                    <option ng-repeat="character in character.characters">{{ character.name }}</option>
+                </select>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>

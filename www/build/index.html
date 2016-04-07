@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <meta charset="utf-8">
+
+    <title>DBZ Life Tracker</title>
+
+</head>
+
+<body>
+
+<div class="row dbz-outer-wrapper">
+
+    <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
+
+        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
+             ng-repeat="button in anger.buttons">
+
+            <a class="anger-button rotate" href="#">{{ button }}</a>
+
+        </div>
+
+        <option ng-repeat="character in character.characters">{{ character.name }}</option>
+
+    </div>
+
+    <div class="small-8 columns main-content-wrapper">
+
+
+        <div class="dbz-header row">
+
+            <h1 class="dbz-header-title">
+                <i class="fa fa-star"></i> <span>DBZ</span> Life Tracker <i class="fa fa-star"></i>
+            </h1>
+
+            <div class="dbz-menu">
+
+                <div class="small-4 columns">
+                    <div class="dbz-menu-item" ui-sref="home">Start Match</div>
+                </div>
+                <div class="small-4 columns">
+                    <div class="dbz-menu-item" ui-sref="attack-table">Attack Table</div>
+                </div>
+                <div class="small-4 columns">
+                    <div class="dbz-menu-item" ui-sref="settings">Settings</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- main content area -->
+        <div ui-view></div>
+
+    </div>
+
+    <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
+
+        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
+             ng-repeat="button in anger.buttons">
+
+            <a ng-click="" ng-class="" class="anger-button" href="#">{{ button }}</a>
+
+        </div>
+
+        <option ng-repeat="character in character.characters">{{ character.name }}</option>
+
+    </div>
+
+</div>
+
+<!-- inject:js -->
+<!-- endinject -->
+
+</body>
+
+</html>
