@@ -1,0 +1,17 @@
+{
+  "name": "dbz-ionic",
+  "description": "A manager for the Dragon Ball Z Collectible Card Game",
+  "version": "0.0.1",
+  "homepage": "https://mageemedia.net/dbztcg",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "jquery": "~2.1.1",
+    "fontawesome": "*",
+    "foundation": "*",
+    "angular-route": "1.4.x",
+    "ui-router": "0.2.x"
+  }
+}

@@ -1,0 +1,25 @@
+.dbz-menu {
+
+  background-color: blue;
+
+  .small-4 {
+    padding: 0;
+  }
+
+  .dbz-menu-item {
+
+    text-align: center;
+    padding: 4px 0;
+    color: #FFF;
+    text-transform: uppercase;
+    text-shadow: 1px 1px rgba(0,0,0,0.2);
+    background-color: red;
+    cursor: pointer;
+
+    &:hover {
+
+      background-color: blue;
+    }
+
+  }
+}

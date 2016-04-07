@@ -1,0 +1,45 @@
+.anger-wrapper {
+
+  height: 100vh;
+  background-color: #F7F7F7;
+  padding: 0;
+
+  .anger-button-wrap {
+
+    height: 20%;
+    border: 2px solid #444;
+    border-bottom: none;
+    width: 100%;
+    //position: relative;
+    text-align: center;
+    padding-top: 0.2em;
+
+    a.anger-button {
+
+      font-size: 3em;
+      color: #222;
+      //position: absolute;
+      //top: 10%;
+      //left: 42%;
+    }
+
+    &:hover {
+
+      background-color: red;
+      cursor: pointer;
+      a.anger-button {
+        color: #FFF;
+      }
+    }
+
+    &.active {
+
+      background-color: red;
+      a.anger-button {
+        color: #FFF;
+      }
+    }
+  }
+
+}
+
