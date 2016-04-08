@@ -18,9 +18,13 @@
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
         <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
-             ng-repeat="button in anger.buttons">
+             ng-repeat="button in anger.buttons_left">
 
-            <a class="anger-button rotate" href="#">{{ button }}</a>
+            <div class="rotate-left">
+
+                <a ng-click="" ng-class="" class="anger-button" href="#">{{ button }}</a>
+
+            </div>
 
         </div>
 
@@ -40,7 +44,7 @@
             <div class="dbz-menu">
 
                 <div class="small-4 columns">
-                    <div class="dbz-menu-item" ui-sref="home">Start Match</div>
+                    <div class="dbz-menu-item" ui-sref="home">Match</div>
                 </div>
                 <div class="small-4 columns">
                     <div class="dbz-menu-item" ui-sref="attack-table">Attack Table</div>
@@ -61,9 +65,13 @@
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
         <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
-             ng-repeat="button in anger.buttons">
+             ng-repeat="button in anger.buttons_right">
 
-            <a ng-click="" ng-class="" class="anger-button" href="#">{{ button }}</a>
+            <div class="rotate-right">
+
+                <a ng-click="" ng-class="" class="anger-button" href="#">{{ button }}</a>
+
+            </div>
 
         </div>
 

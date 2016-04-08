@@ -1,10 +1,75 @@
-.main-content-wrapper {
+body {
+  //background-color: #000;
+  background-image: linear-gradient(#222, #333);
 
-  //padding: 0;
+  .main-content-wrapper {
 
-  .home-content-wrapper {
+    .vs-wrap {
 
-    padding-top: 1em;
+      @include grid-lines(rgba(0, 255, 0, 0.3));
+      background-size: 25px 25px;
 
+      .img-wrap {
+        width: 50%;
+        float: left;
+        text-align: center;
+        border-left: 1px solid rgba(0, 255, 0, 0.5);
+        border-right: 1px solid rgba(0, 255, 0, 0.5);
+
+        &:hover {
+
+          background-color: rgba(0, 255, 0, 0.2);
+        }
+
+        img {
+
+          width: 70%;
+        }
+      }
+
+      .vs-text {
+
+        //background-color: #333;
+        height: 20px;
+        position: relative;
+
+
+        .character-name {
+
+          font-family: SaiyanFont;
+          font-size: 25px;
+          letter-spacing: 2px;
+          width: 50%;
+          float: left;
+          text-align: center;
+          color: rgba(0, 255, 0, 0.5);
+          background-image: url('../img/bgs/rubber_grip.png');
+          border-top: 1px solid rgba(0,255,0,0.2);
+          border-bottom: 1px solid rgba(0,255,0,0.2);
+        }
+
+        .just-vs {
+          font-family: SaiyanFont;
+          font-size: 20px;
+          position: absolute;
+          z-index: 100;
+          text-align: center;
+          width: 100%;
+          top: 6px;
+          color: rgba(0,255,0,0.5);
+        }
+
+      }
+
+    }
   }
+
 }
+
+
+//#content-testy{
+//  @include grid-lines(rgba(0, 255, 0, 0.3));
+//  background-size:25px 25px;
+//  height: 200px;
+//  //width: 200px;
+//}

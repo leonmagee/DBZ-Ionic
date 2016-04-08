@@ -1,4 +1,23 @@
-.rotate {
+.rotate-left {
+
+  /* Safari */
+  -webkit-transform: rotate(-270deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-270deg);
+
+  /* IE */
+  -ms-transform: rotate(-270deg);
+
+  /* Opera */
+  -o-transform: rotate(-270deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+.rotate-right {
 
   /* Safari */
   -webkit-transform: rotate(-90deg);
@@ -15,4 +34,12 @@
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
+}
+
+@mixin grid-lines( $color : rgba(255, 255, 255, .05) ) {
+  background-image: linear-gradient(0deg, transparent 24%, $color 25%, $color 26%, transparent 27%, transparent 74%, $color 75%, $color 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, $color 25%, $color 26%, transparent 27%, transparent 74%, $color 75%, $color 76%, transparent 77%, transparent);
+}
+
+.pushbottom {
+  clear: both;
 }

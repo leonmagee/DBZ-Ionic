@@ -1,48 +1,55 @@
 <div class="home-content-wrapper">
+    <div class="row" ng-controller="game as game">
+        <div id="content-testy"></div>
+        <div ng-if="game.start === false" class="vs-wrap">
 
-    <div ng-controller="player_info as player">
-        <!--<script>console.log(player);</script>-->
-        <!-- how to bind AND use a placeholder??? -->
-        <input ng-model="player.defaults.name" placeholder="placeholder"/>
+            <div class="img-wrap"><img src="../img/personalities/{{ game.player_1.name }}.png"/></div>
+            <div class="img-wrap"><img src="../img/personalities/{{ game.player_2.name }}.png"/></div>
 
-        <h2>{{ player.defaults.name }}</h2>
-    </div>
-    <!--
-    Use the UI Router to setup the file heirarchy
-    Watch the Egghead IO architecture demo to set that up
-    Controllers should be applied to different sections, not the body
-    Watch the Gulp demo to setup gulp automation with scss...
-    -->
+            <div class="pushbottom"></div>
 
-    <!--<div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">-->
+            <div class="vs-text">
+                <div class="character-name">{{ game.player_1.name }}</div>
+                <div class="just-vs">vs</div>
+                <div class="character-name">{{ game.player_2.name }}</div>
+            </div>
 
-    <div class="row" ng-controller="character_info as character">
-
-        <h3 class="dbz-steps"><span>1</span> Choose Main Personality</h3>
-
-        <div class="small-6 columns">
-
-            <h4>Player One</h4>
-
-            <form>
-
-                <select name="character">
-                    <option ng-repeat="character in character.characters">{{ character.name }}</option>
-                </select>
-
-            </form>
+            <div class="pushbottom"></div>
         </div>
 
-        <div class="small-6 columns">
-            <h4>Player Two</h4>
+        <div ng-if="game.start">
+            <!--<div ng-if="game.start === false">-->
 
-            <form>
+            <h3 class="dbz-steps"><span>1</span> Choose Main Personality</h3>
 
-                <select name="character">
-                    <option ng-repeat="character in character.characters">{{ character.name }}</option>
-                </select>
+            <div class="small-6 columns">
 
-            </form>
+                <h4>Player One</h4>
+
+                <form>
+
+                    <select name="character" ng-model="game.player_1"
+                            ng-options="character as character.name for character in game.characters">
+                    </select>
+
+                </form>
+            </div>
+
+            <div class="small-6 columns">
+                <h4>Player Two</h4>
+
+                <form>
+
+                    <select name="character" ng-model="game.player_2"
+                            ng-options="character as character.name for character in game.characters">
+
+                    </select>
+
+                </form>
+            </div>
+
+            <a class="button" ng-click="game.startMatch()">Start Match</a>
+
         </div>
 
     </div>

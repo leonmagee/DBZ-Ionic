@@ -9,12 +9,21 @@
   .dbz-menu-item {
 
     text-align: center;
-    padding: 4px 0;
-    color: #FFF;
+    padding: 8px 0 4px 0;
+    //color: #FFF;
     text-transform: uppercase;
-    text-shadow: 1px 1px rgba(0,0,0,0.2);
-    background-color: red;
+    //text-shadow: 1px 1px rgba(0,0,0,0.2);
+    //background-color: red;
     cursor: pointer;
+    color: rgba(0, 255, 0, 0.5);
+    background-image: url('../img/bgs/rubber_grip.png');
+    border-top: 1px solid rgba(0,255,0,0.2);
+    border-bottom: 1px solid rgba(0,255,0,0.2);
+    border-top: 1px solid rgba(0,255,0,0.2);
+    border-bottom: 1px solid rgba(0,255,0,0.2);
+    font-family: SaiyanFont;
+    font-size: 15px;
+    letter-spacing: 1px;
 
     &:hover {
 

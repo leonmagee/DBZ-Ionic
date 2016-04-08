@@ -1,7 +1,8 @@
 .anger-wrapper {
 
   height: 100vh;
-  background-color: #F7F7F7;
+  background-color: #111;
+  background-image: url('../img/bgs/carbon_fibre.png');
   padding: 0;
 
   .anger-button-wrap {
@@ -17,7 +18,9 @@
     a.anger-button {
 
       font-size: 3em;
-      color: #222;
+      color: rgba(255,255,255,0.5);
+      font-weight: bold;
+      //font-family: SaiyanFont;
       //position: absolute;
       //top: 10%;
       //left: 42%;
@@ -25,7 +28,8 @@
 
     &:hover {
 
-      background-color: red;
+      //background-color: red;
+      background-color: rgba(0,255,0,0.3);
       cursor: pointer;
       a.anger-button {
         color: #FFF;
@@ -34,7 +38,9 @@
 
     &.active {
 
-      background-color: red;
+      //background-color: red;
+      background-color: rgba(0,255,0,0.3);
+
       a.anger-button {
         color: #FFF;
       }

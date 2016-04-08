@@ -1,17 +1,19 @@
 // fonts
 @font-face {
   font-family: SaiyanFont;
-  src: url('../../vendor/fonts/saiyan_sans/Saiyan-Sans.ttf');
+  src: url('../lib/fonts/saiyan_sans/Saiyan-Sans.ttf');
 }
 
 .dbz-header {
-
-  background-color: yellow;
+  background-color: #111;
+  //background-image: url('../img/bgs/inflicted.png');
+  background-image: url('../img/bgs/crossed_stripes.png');
+  //background-image: url('../img/bgs/carbon_fibre.png');
 }
 
 h1.dbz-header-title {
   margin: 0;
-  padding: 0.4em 0;
+  padding: 0.1em 0;
   font-size: 2.1em;
   color: orange;
   text-align: center;

@@ -46,26 +46,29 @@ angular.module('app', [
 
         }
     )
-    .controller('character_info', function () {
+    .controller('game', function () {
         /**
          * This will be switched to pull data from a WordPress site using the REST api
          * I need to create a site to
          */
-        var character_info = this;
+        var game = this;
 
-        character_info.characters = [
+        game.start = false;
+
+        game.startMatch = function() {
+
+            game.start = true;
+
+            console.log('Player 1:' + game.player_1.name);
+            console.log('Player 2:' + game.player_2.name);
+
+        }
+
+
+
+        game.characters = [
             {
                 id: 0,
-                name: 'Vegeta',
-                race: 'Saiyan',
-                alignment: 'Villain',
-                level1: [0, 250, 500, 1000, 2000, 3000, 4000, 5000, 6000, 8000, 10000],
-                level2: [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000],
-                level3: [0, 500, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 125000, 150000],
-                level4: [0, 1000, 10000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000]
-            },
-            {
-                id: 1,
                 name: 'Goku',
                 race: 'Saiyan',
                 alignment: 'Hero',
@@ -73,6 +76,16 @@ angular.module('app', [
                 level2: [0, 500, 1000, 5000, 9000, 13000, 17000, 21000, 25000, 29000, 33000],
                 level3: [0, 50000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000],
                 level4: [0, 100000, 200000, 400000, 600000, 800000, 1000000, 1200000, 1350000, 1500000, 1650000]
+            },
+            {
+                id: 1,
+                name: 'Vegeta',
+                race: 'Saiyan',
+                alignment: 'Villain',
+                level1: [0, 250, 500, 1000, 2000, 3000, 4000, 5000, 6000, 8000, 10000],
+                level2: [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000],
+                level3: [0, 500, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 125000, 150000],
+                level4: [0, 1000, 10000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000]
             },
             {
                 id: 2,
@@ -114,7 +127,10 @@ angular.module('app', [
                 level3: [0, 1000, 10000, 50000, 100000, 150000, 200000, 300000, 400000, 500000, 600000],
                 level4: [0, 5000, 50000, 100000, 150000, 250000, 350000, 450000, 550000, 650000, 750000]
             }
-        ]
+        ];
+
+        game.player_1 = game.characters[0];
+        game.player_2 = game.characters[1];
 
 
     })
@@ -152,7 +168,8 @@ angular.module('app', [
          *  This may change based on the main personality and mastery
          *  I need to find a way to assign a class based on angular?
          */
-        anger.buttons = [1, 2, 3, 4, 5];
+        anger.buttons_left = [1, 2, 3, 4, 5];
+        anger.buttons_right = [5, 4, 3, 2, 1];
 
         anger.selected = 0;
 
