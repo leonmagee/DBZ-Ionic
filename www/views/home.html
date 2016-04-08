@@ -1,7 +1,8 @@
 <div class="home-content-wrapper">
+
     <div class="row" ng-controller="game as game">
-        <div id="content-testy"></div>
-        <div ng-if="game.start === false" class="vs-wrap">
+
+        <div ng-if="game.start" class="vs-wrap">
 
             <div class="img-wrap"><img src="../img/personalities/{{ game.player_1.name }}.png"/></div>
             <div class="img-wrap"><img src="../img/personalities/{{ game.player_2.name }}.png"/></div>
@@ -17,38 +18,44 @@
             <div class="pushbottom"></div>
         </div>
 
-        <div ng-if="game.start">
+        <div ng-if="game.start === false">
             <!--<div ng-if="game.start === false">-->
 
-            <h3 class="dbz-steps"><span>1</span> Choose Main Personality</h3>
+            <div class="dbz-game-start">
 
-            <div class="small-6 columns">
+            <h3 class="dbz-steps"><div class="circle-number"><span>1</span></div>Choose Main Personality</h3>
 
-                <h4>Player One</h4>
+                <div class="small-6 columns">
 
-                <form>
+                    <h4>Player One</h4>
 
-                    <select name="character" ng-model="game.player_1"
-                            ng-options="character as character.name for character in game.characters">
-                    </select>
+                    <form>
 
-                </form>
+                        <select name="character" ng-model="game.player_1"
+                                ng-options="character as character.name for character in game.characters">
+                        </select>
+
+                    </form>
+
+                </div>
+
+                <div class="small-6 columns">
+                    <h4>Player Two</h4>
+
+                    <form>
+
+                        <select name="character" ng-model="game.player_2"
+                                ng-options="character as character.name for character in game.characters">
+
+                        </select>
+
+                    </form>
+
+                </div>
+
+                <a class="button" ng-click="game.startMatch()">Start Match</a>
+
             </div>
-
-            <div class="small-6 columns">
-                <h4>Player Two</h4>
-
-                <form>
-
-                    <select name="character" ng-model="game.player_2"
-                            ng-options="character as character.name for character in game.characters">
-
-                    </select>
-
-                </form>
-            </div>
-
-            <a class="button" ng-click="game.startMatch()">Start Match</a>
 
         </div>
 

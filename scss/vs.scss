@@ -1,0 +1,97 @@
+// game play select
+.dbz-game-start {
+
+  text-align: center;
+  padding-top: 5px;
+  @include grid-lines(rgba(255, 255, 255, 0.1));
+  background-size: 50px 50px;
+  height: 350px;
+
+  .dbz-steps {
+
+    color: #EEE;
+    //text-align: center;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 5px;
+  }
+
+  h4 {
+
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+  }
+
+  select {
+
+    padding: 5px;
+    height: 30px;
+    background-color: #CCC;
+  }
+}
+
+
+
+
+
+// game play section with images
+.vs-wrap {
+
+  @include grid-lines(rgba(0, 255, 0, 0.3));
+  background-size: 25px 25px;
+
+  .img-wrap {
+    width: 50%;
+    float: left;
+    text-align: center;
+    border-left: 1px solid rgba(0, 255, 0, 0.5);
+    border-right: 1px solid rgba(0, 255, 0, 0.5);
+
+    &:hover {
+
+      background-color: rgba(0, 255, 0, 0.2);
+    }
+
+    img {
+
+      width: 70%;
+    }
+  }
+
+  .vs-text {
+
+    //background-color: #333;
+    height: 20px;
+    position: relative;
+
+
+    .character-name {
+
+      font-family: SaiyanFont;
+      font-size: 25px;
+      letter-spacing: 2px;
+      width: 50%;
+      float: left;
+      text-align: center;
+      color: rgba(0, 255, 0, 0.5);
+      background-image: url('../img/bgs/rubber_grip.png');
+      border-top: 1px solid rgba(0,255,0,0.2);
+      border-bottom: 1px solid rgba(0,255,0,0.2);
+    }
+
+    .just-vs {
+      font-family: SaiyanFont;
+      font-size: 20px;
+      position: absolute;
+      z-index: 100;
+      text-align: center;
+      width: 100%;
+      top: 6px;
+      color: rgba(0,255,0,0.5);
+    }
+
+  }
+
+}

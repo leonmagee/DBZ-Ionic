@@ -64,8 +64,6 @@ angular.module('app', [
 
         }
 
-
-
         game.characters = [
             {
                 id: 0,
@@ -131,6 +129,48 @@ angular.module('app', [
 
         game.player_1 = game.characters[0];
         game.player_2 = game.characters[1];
+
+
+
+        game.masteries = [
+            {
+                id: 0,
+                name: 'Saiyan Empowered Mastery',
+                text: 'description goes here',
+                type: 'Saiyan'
+            },
+            {
+                id: 1,
+                name: 'Orange Adaptive Mastery',
+                text: '',
+                type: 'Orange'
+            },
+            {
+                id: 2,
+                name: 'Red Enraged Mastery',
+                text: '',
+                type: 'Red'
+            },
+            {
+                id: 3,
+                name: 'Black Devious Mastery',
+                text: '',
+                type: 'Black'
+            },
+            {
+                id: 4,
+                name: 'Blue Protective Mastery',
+                text: '',
+                type: 'Blue'
+            },
+            {
+                id: 4,
+                name: 'Namekian Knowledge Mastery',
+                text: '',
+                type: 'Namekian'
+            }
+    ];
+
 
 
     })

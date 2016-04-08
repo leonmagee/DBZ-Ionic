@@ -1,0 +1,69 @@
+// clear floats
+.pushbottom {
+  clear: both;
+}
+
+// button styles
+.button {
+  font-family: SaiyanFont;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 1px 1px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+  background-image: linear-gradient(green, darken( green, 10%));
+  padding: 10px 15px 9px;
+  border-radius: 10px;
+  border: 2px solid #777;
+}
+
+// number in circle
+
+.circle-number {
+
+  background-color: green;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  display:inline-block;
+  line-height:0px;
+  text-align: center;
+  margin-right: 5px;
+
+  span {
+
+    display:inline-block;
+    padding-top:50%;
+    padding-bottom:50%;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(0,0,0,0.2);
+    font-size: 17px;
+  }
+}
+
+// rotate text
+.rotate-left {
+  /* Safari */
+  -webkit-transform: rotate(-270deg);
+  /* Firefox */
+  -moz-transform: rotate(-270deg);
+  /* IE */
+  -ms-transform: rotate(-270deg);
+  /* Opera */
+  -o-transform: rotate(-270deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.rotate-right {
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
