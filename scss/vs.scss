@@ -22,7 +22,7 @@
     font-size: 12px;
     text-transform: uppercase;
     text-align: center;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   select {
@@ -43,10 +43,6 @@
     text-align: center;
   }
 }
-
-
-
-
 
 // game play section with images
 .vs-wrap {
@@ -75,26 +71,26 @@
   .vs-text {
 
     //background-color: #333;
-    height: 20px;
+    height: 200px;
     position: relative;
-
+    background-image: url('../img/bgs/rubber_grip.png');
 
     .character-info {
 
       width: 50%;
       float: left;
       text-align: center;
-      background-image: url('../img/bgs/rubber_grip.png');
-      border-top: 1px solid rgba(0,255,0,0.2);
-      border-bottom: 1px solid rgba(0,255,0,0.2);
+      //background-image: url('../img/bgs/rubber_grip.png');
+      border-top: 1px solid rgba(0, 255, 0, 0.2);
+      //border-bottom: 1px solid rgba(0, 255, 0, 0.2);
 
       .name {
         font-family: SaiyanFont;
         font-size: 25px;
+        line-height: 15px;
+        padding-top: 10px;
         letter-spacing: 2px;
         color: rgba(0, 255, 0, 0.5);
-        margin: 0;
-        padding: 0;
       }
 
       .mastery {
@@ -107,30 +103,31 @@
         border: 1px solid #CCC;
         display: inline-block;
         text-transform: uppercase;
+        margin-bottom: 10px;
 
         &.Orange {
 
-          color: orange;
+          @include gradient-bg-mastery($orange-mastery);
         }
 
         &.Red {
 
-          color: red;
+          @include gradient-bg-mastery($red-mastery);
         }
 
         &.Blue {
 
-          color: blue;
+          @include gradient-bg-mastery($blue-mastery);
         }
 
         &.Saiyan {
 
-          color: purple;
+          @include gradient-bg-mastery($saiyan-mastery);
         }
 
         &.Namekian {
 
-          color: green;
+          @include gradient-bg-mastery($namekian-mastery);
         }
 
       }
@@ -144,7 +141,13 @@
       text-align: center;
       width: 100%;
       top: 6px;
-      color: rgba(0,255,0,0.5);
+      color: rgba(0, 255, 0, 0.5);
+    }
+
+    .button-wrap {
+
+      text-align: center;
+      margin-top: 20px;
     }
 
   }

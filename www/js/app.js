@@ -133,42 +133,113 @@ angular.module('app', [
         game.masteries = [
             {
                 id: 0,
+                card_no: 'S25',
+                card_set: 'Premiere',
                 name: 'Saiyan Empowered Mastery',
-                text: 'description goes here',
+                image: 'PrS25.jpg',
                 mastery: 'Saiyan',
-                status_change: {PUR: '+1', EnergyAttacks: '+1'}
+                status_change: {
+                    Continuous: [ "Can't win by MPPV", "Saiyan attacks gain +1 anger", "Saiyan HIT attacks gain +3 power stages", "Rejuvenated cards raise your anger +1" ]
+                },
             },
             {
                 id: 1,
+                card_no: 'S26',
+                card_set: 'Premiere',
                 name: 'Orange Adaptive Mastery',
-                text: '',
-                mastery: 'Orange'
+                image: 'PrS26.jpg',
+                mastery: 'Orange',
+                status_change: {
+                    Continuous: [ "Drills are not discarded after changing MP level", "Energy attacks gain +1 life card", "If you use critical damage effect during combat, at the end, grab a Styled Drill from your discard pile and put it in play" ]
+                },
             },
             {
                 id: 2,
+                card_no: 'S27',
+                card_set: 'Premiere',
                 name: 'Red Enraged Mastery',
-                text: '',
-                mastery: 'Red'
+                image: 'PrS27.jpg',
+                mastery: 'Red',
+                status_change: {
+                    Continuous: [ "Every time you use critical damage effect, raise your anger +1", "If you raise an MP level, draw 1 card and discard 1 card", "If you lower an MP level, draw 1 card" ]
+                },
             },
             {
                 id: 3,
+                card_no: 'S28',
+                card_set: 'Premiere',
                 name: 'Black Devious Mastery',
-                text: '',
-                mastery: 'Black'
+                image: 'PrS28.jpg',
+                mastery: 'Black',
+                status_change: {
+                    Continuous: [ "Attacks gain +1 life card", "Attacks gain +1 power stage" ],
+                    POWER: [ "Discard 1 card from your hand to banish the bottom 2 cards in your opponent's discard pile", "If the discarded card is Styled, you opponent discards a card" ]
+                },
             },
             {
                 id: 4,
+                card_no: 'S29',
+                card_set: 'Premiere',
                 name: 'Blue Protective Mastery',
-                text: '',
-                mastery: 'Blue'
+                image: 'PrS29.jpg',
+                mastery: 'Blue',
+                status_change: {
+                    Continuous: [ "Opponent needs 6 anger to raise MP level" ],
+                    POWER: [ "Discard 1 Physical Combat card from your hand to block an Energy attack OR Discard 1 Energy Combat card from your hand to block a Physical attack", "If the discarded card is Blue, raise/lower any player's anger +1/-1" ]
+                },
             },
             {
-                id: 4,
+                id: 5,
+                card_no: 'S30',
+                card_set: 'Premiere',
                 name: 'Namekian Knowledge Mastery',
-                text: '',
-                mastery: 'Namekian'
-            }
+                image: 'PrS30.jpg',
+                mastery: 'Namekian',
+                status_change: {
+                    Continuous: [ "Rejuvenated cards raise your anger +1", "Shuffled cards raise your anger +1", "If you or your opponent play a Dragon Ball, destroy the top card in your opponent's Life Deck", "Your opponent can capture all but 1 of your Dragon Balls you control with a critical damage effect" ]
+                },
+            },
         ];
+        //
+        //game.masteries = [
+        //    {
+        //        id: 0,
+        //        name: 'Saiyan Empowered Mastery',
+        //        text: 'description goes here',
+        //        mastery: 'Saiyan',
+        //        status_change: {PUR: '+1', EnergyAttacks: '+1'}
+        //    },
+        //    {
+        //        id: 1,
+        //        name: 'Orange Adaptive Mastery',
+        //        text: '',
+        //        mastery: 'Orange'
+        //    },
+        //    {
+        //        id: 2,
+        //        name: 'Red Enraged Mastery',
+        //        text: '',
+        //        mastery: 'Red'
+        //    },
+        //    {
+        //        id: 3,
+        //        name: 'Black Devious Mastery',
+        //        text: '',
+        //        mastery: 'Black'
+        //    },
+        //    {
+        //        id: 4,
+        //        name: 'Blue Protective Mastery',
+        //        text: '',
+        //        mastery: 'Blue'
+        //    },
+        //    {
+        //        id: 4,
+        //        name: 'Namekian Knowledge Mastery',
+        //        text: '',
+        //        mastery: 'Namekian'
+        //    }
+        //];
 
         game.mastery_1 = game.masteries[0];
         game.mastery_2 = game.masteries[1];

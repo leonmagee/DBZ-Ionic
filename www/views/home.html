@@ -12,20 +12,30 @@
             <div class="vs-text">
                 <div class="character-info">
                     <div class="name">{{ game.player_1.name }}</div>
-                    <div class="mastery">{{ game.mastery_1.name }}</div>
+                    <div class="mastery {{ game.mastery_1.mastery }}">{{ game.mastery_1.name }}</div>
                 </div>
                 <div class="just-vs">vs</div>
                 <div class="character-info">
                     <div class="name">{{ game.player_2.name }}</div>
                     <div class="mastery {{ game.mastery_2.mastery }}">{{ game.mastery_2.name }}</div>
                 </div>
+
+                <div class="pushbottom"></div>
+
+                <div class="button-wrap">
+
+                    <a class="button" ng-click="game.resetMatch()">Reset Match</a>
+
+                </div>
+
             </div>
 
-            <div class="pushbottom"></div>
+
+
+
         </div>
 
         <div ng-if="game.start === false">
-            <!--<div ng-if="game.start === false">-->
 
             <div class="dbz-game-start">
 
