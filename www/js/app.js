@@ -55,7 +55,7 @@ angular.module('app', [
 
         game.start = false;
 
-        game.startMatch = function() {
+        game.startMatch = function () {
 
             game.start = true;
 
@@ -130,47 +130,48 @@ angular.module('app', [
         game.player_1 = game.characters[0];
         game.player_2 = game.characters[1];
 
-
-
         game.masteries = [
             {
                 id: 0,
                 name: 'Saiyan Empowered Mastery',
                 text: 'description goes here',
-                type: 'Saiyan'
+                mastery: 'Saiyan',
+                status_change: {PUR: '+1', EnergyAttacks: '+1'}
             },
             {
                 id: 1,
                 name: 'Orange Adaptive Mastery',
                 text: '',
-                type: 'Orange'
+                mastery: 'Orange'
             },
             {
                 id: 2,
                 name: 'Red Enraged Mastery',
                 text: '',
-                type: 'Red'
+                mastery: 'Red'
             },
             {
                 id: 3,
                 name: 'Black Devious Mastery',
                 text: '',
-                type: 'Black'
+                mastery: 'Black'
             },
             {
                 id: 4,
                 name: 'Blue Protective Mastery',
                 text: '',
-                type: 'Blue'
+                mastery: 'Blue'
             },
             {
                 id: 4,
                 name: 'Namekian Knowledge Mastery',
                 text: '',
-                type: 'Namekian'
+                mastery: 'Namekian'
             }
-    ];
+        ];
 
+        game.mastery_1 = game.masteries[0];
+        game.mastery_2 = game.masteries[1];
 
 
     })
@@ -220,7 +221,7 @@ angular.module('app', [
 
 
     })
-    .controller( 'test-controller', function() {
+    .controller('test-controller', function () {
         var tester = this;
 
         tester.people = [
@@ -230,7 +231,7 @@ angular.module('app', [
             {first_name: 'jasper', last_name: 'frederick'}
         ];
 
-        tester.addPerson = function() {
+        tester.addPerson = function () {
             tester.people.push({first_name: tester.addFirst, last_name: tester.addLast});
 
             console.log('click worked');
@@ -241,8 +242,6 @@ angular.module('app', [
     //
     //})
 ;
-
-
 
 
 //// Ionic Starter App

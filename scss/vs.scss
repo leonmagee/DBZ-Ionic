@@ -1,8 +1,8 @@
 // game play select
 .dbz-game-start {
 
-  text-align: center;
-  padding-top: 5px;
+  //text-align: center;
+  padding-top: 10px;
   @include grid-lines(rgba(255, 255, 255, 0.1));
   background-size: 50px 50px;
   height: 350px;
@@ -14,11 +14,12 @@
     font-size: 17px;
     text-transform: uppercase;
     padding: 5px;
+    text-align: center;
   }
 
   h4 {
 
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     text-align: center;
     color: rgba(255,255,255,0.8);
@@ -29,6 +30,17 @@
     padding: 5px;
     height: 30px;
     background-color: #CCC;
+
+    &.masteries {
+
+      font-size: 12px;
+    }
+  }
+
+  .button-wrap {
+
+    margin-top: 8px;
+    text-align: center;
   }
 }
 
@@ -46,8 +58,8 @@
     width: 50%;
     float: left;
     text-align: center;
-    border-left: 1px solid rgba(0, 255, 0, 0.5);
-    border-right: 1px solid rgba(0, 255, 0, 0.5);
+    //border-left: 1px solid rgba(0, 255, 0, 0.5);
+    //border-right: 1px solid rgba(0, 255, 0, 0.5);
 
     &:hover {
 
@@ -67,18 +79,61 @@
     position: relative;
 
 
-    .character-name {
+    .character-info {
 
-      font-family: SaiyanFont;
-      font-size: 25px;
-      letter-spacing: 2px;
       width: 50%;
       float: left;
       text-align: center;
-      color: rgba(0, 255, 0, 0.5);
       background-image: url('../img/bgs/rubber_grip.png');
       border-top: 1px solid rgba(0,255,0,0.2);
       border-bottom: 1px solid rgba(0,255,0,0.2);
+
+      .name {
+        font-family: SaiyanFont;
+        font-size: 25px;
+        letter-spacing: 2px;
+        color: rgba(0, 255, 0, 0.5);
+        margin: 0;
+        padding: 0;
+      }
+
+      .mastery {
+
+        padding: 2px 5px;
+        font-size: 10px;
+        background-color: #AAA;
+        font-weight: bold;
+        border-radius: 4px;
+        border: 1px solid #CCC;
+        display: inline-block;
+        text-transform: uppercase;
+
+        &.Orange {
+
+          color: orange;
+        }
+
+        &.Red {
+
+          color: red;
+        }
+
+        &.Blue {
+
+          color: blue;
+        }
+
+        &.Saiyan {
+
+          color: purple;
+        }
+
+        &.Namekian {
+
+          color: green;
+        }
+
+      }
     }
 
     .just-vs {

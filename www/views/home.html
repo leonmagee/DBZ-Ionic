@@ -10,9 +10,15 @@
             <div class="pushbottom"></div>
 
             <div class="vs-text">
-                <div class="character-name">{{ game.player_1.name }}</div>
+                <div class="character-info">
+                    <div class="name">{{ game.player_1.name }}</div>
+                    <div class="mastery">{{ game.mastery_1.name }}</div>
+                </div>
                 <div class="just-vs">vs</div>
-                <div class="character-name">{{ game.player_2.name }}</div>
+                <div class="character-info">
+                    <div class="name">{{ game.player_2.name }}</div>
+                    <div class="mastery {{ game.mastery_2.mastery }}">{{ game.mastery_2.name }}</div>
+                </div>
             </div>
 
             <div class="pushbottom"></div>
@@ -23,11 +29,11 @@
 
             <div class="dbz-game-start">
 
-            <h3 class="dbz-steps"><div class="circle-number"><span>1</span></div>Choose Main Personality</h3>
+            <h3 class="dbz-steps"><div class="circle-number"><span>1</span></div>Choose Personalities</h3>
 
                 <div class="small-6 columns">
 
-                    <h4>Player One</h4>
+                    <h4>Personality One</h4>
 
                     <form>
 
@@ -40,20 +46,56 @@
                 </div>
 
                 <div class="small-6 columns">
-                    <h4>Player Two</h4>
+
+                    <h4>Personality Two</h4>
 
                     <form>
 
                         <select name="character" ng-model="game.player_2"
                                 ng-options="character as character.name for character in game.characters">
-
                         </select>
 
                     </form>
 
                 </div>
 
-                <a class="button" ng-click="game.startMatch()">Start Match</a>
+                <h3 class="dbz-steps"><div class="circle-number"><span>2</span></div>Choose Masteries</h3>
+
+                <div class="small-6 columns">
+
+                    <h4>Mastery One</h4>
+
+                    <form>
+
+                        <select name="mastery" ng-model="game.mastery_1" class="masteries"
+                                ng-options="mastery as mastery.name for mastery in game.masteries">
+                        </select>
+
+                    </form>
+
+                </div>
+
+                <div class="small-6 columns">
+
+                    <h4>Mastery Two</h4>
+
+                    <form>
+
+                        <select name="mastery" ng-model="game.mastery_2" class="masteries"
+                                ng-options="mastery as mastery.name for mastery in game.masteries">
+                        </select>
+
+                    </form>
+
+                </div>
+
+                <div class="pushbottom"></div>
+
+                <div class="button-wrap">
+
+                    <a class="button" ng-click="game.startMatch()">Start Match</a>
+
+                </div>
 
             </div>
 
