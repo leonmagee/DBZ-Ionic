@@ -58,10 +58,37 @@ angular.module('app', [
         game.startMatch = function () {
 
             game.start = true;
+        }
 
-            console.log('Player 1:' + game.player_1.name);
-            console.log('Player 2:' + game.player_2.name);
+        game.resetMatch = function () {
 
+            game.start = false;
+        }
+
+        game.scouter_1 = false;
+        game.scouter_2 = false;
+
+        game.scoutClick_1 = function() {
+
+            if ( game.scouter_1 === false ) {
+
+                game.scouter_1 = true;
+
+            } else {
+                game.scouter_1 = false;
+            }
+
+        }
+
+        game.scoutClick_2 = function() {
+
+            if ( game.scouter_2 === false ) {
+
+                game.scouter_2 = true;
+
+            } else {
+                game.scouter_2 = false;
+            }
         }
 
         game.characters = [
@@ -130,6 +157,33 @@ angular.module('app', [
         game.player_1 = game.characters[0];
         game.player_2 = game.characters[1];
 
+
+        game.setMastery = function(mastery_id) {
+
+            //console.log('mastery click worked');
+            //console.log(game.masteries[mastery_id].status_change.Continuous);
+            game.masteryTitle = game.masteries[mastery_id].name;
+            game.masteryClass = game.masteries[mastery_id].mastery;
+            game.currentContinuous = game.masteries[mastery_id].status_change.Continuous;
+            game.currentPower = game.masteries[mastery_id].status_change.Power;
+            game.masteryModal();
+        }
+
+        game.modalActive = false;
+
+        game.masteryModal = function() {
+
+            if ( game.modalActive === false ) {
+
+                game.modalActive = true;
+
+            } else {
+
+                game.modalActive = false;
+            }
+        }
+
+
         game.masteries = [
             {
                 id: 0,
@@ -173,7 +227,7 @@ angular.module('app', [
                 mastery: 'Black',
                 status_change: {
                     Continuous: [ "Attacks gain +1 life card", "Attacks gain +1 power stage" ],
-                    POWER: [ "Discard 1 card from your hand to banish the bottom 2 cards in your opponent's discard pile", "If the discarded card is Styled, you opponent discards a card" ]
+                    Power: [ "Discard 1 card from your hand to banish the bottom 2 cards in your opponent's discard pile", "If the discarded card is Styled, you opponent discards a card" ]
                 },
             },
             {
@@ -185,7 +239,7 @@ angular.module('app', [
                 mastery: 'Blue',
                 status_change: {
                     Continuous: [ "Opponent needs 6 anger to raise MP level" ],
-                    POWER: [ "Discard 1 Physical Combat card from your hand to block an Energy attack OR Discard 1 Energy Combat card from your hand to block a Physical attack", "If the discarded card is Blue, raise/lower any player's anger +1/-1" ]
+                    Power: [ "Discard 1 Physical Combat card from your hand to block an Energy attack OR Discard 1 Energy Combat card from your hand to block a Physical attack", "If the discarded card is Blue, raise/lower any player's anger +1/-1" ]
                 },
             },
             {
@@ -200,77 +254,14 @@ angular.module('app', [
                 },
             },
         ];
-        //
-        //game.masteries = [
-        //    {
-        //        id: 0,
-        //        name: 'Saiyan Empowered Mastery',
-        //        text: 'description goes here',
-        //        mastery: 'Saiyan',
-        //        status_change: {PUR: '+1', EnergyAttacks: '+1'}
-        //    },
-        //    {
-        //        id: 1,
-        //        name: 'Orange Adaptive Mastery',
-        //        text: '',
-        //        mastery: 'Orange'
-        //    },
-        //    {
-        //        id: 2,
-        //        name: 'Red Enraged Mastery',
-        //        text: '',
-        //        mastery: 'Red'
-        //    },
-        //    {
-        //        id: 3,
-        //        name: 'Black Devious Mastery',
-        //        text: '',
-        //        mastery: 'Black'
-        //    },
-        //    {
-        //        id: 4,
-        //        name: 'Blue Protective Mastery',
-        //        text: '',
-        //        mastery: 'Blue'
-        //    },
-        //    {
-        //        id: 4,
-        //        name: 'Namekian Knowledge Mastery',
-        //        text: '',
-        //        mastery: 'Namekian'
-        //    }
-        //];
 
         game.mastery_1 = game.masteries[0];
         game.mastery_2 = game.masteries[1];
-
-
     })
     .controller('player_info', function () {
         var player = this;
 
-        //player.defaults = {id: 0, name: 'Default Player Name', character: 'Goku'};
-
-
         player.defaults = {id: 0, character: 'Goku'};
-
-
-        //console.log('you can see this?');
-
-        //var rest_url = 'http://skyrises.hjstaging.com/wp-json/meetup/awp';
-
-        //var rest_data = $http.get( rest_url );
-
-        //var rest_data = jQuery.ajax({
-        //    dataType: "json",
-        //    url: rest_url,
-        //    data: data,
-        //    success: success
-        //});
-
-        //console.log( rest_data );
-
-
     })
     .controller('anger', function () {
         var anger = this;
@@ -286,10 +277,9 @@ angular.module('app', [
         anger.selected = 0;
 
         anger.select = function (index) {
-            console.log('select worked ' + index);
+            //console.log('select worked ' + index);
             anger.selected = index;
         };
-
 
     })
     .controller('test-controller', function () {
@@ -309,42 +299,4 @@ angular.module('app', [
 
         }
     })
-    //.controller('Mastery', function Mastery(defaults) {
-    //
-    //})
 ;
-
-
-//// Ionic Starter App
-//
-//// angular.module is a global place for creating, registering and retrieving Angular modules
-//// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-//// the 2nd parameter is an array of 'requires'
-//angular.module('starter', ['ionic'])
-//
-//    .run(function ($ionicPlatform) {
-//        $ionicPlatform.ready(function () {
-//            if (window.cordova && window.cordova.plugins.Keyboard) {
-//                // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-//                // for form inputs)
-//                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-//
-//                // Don't remove this line unless you know what you are doing. It stops the viewport
-//                // from snapping when text inputs are focused. Ionic handles this internally for
-//                // a much nicer keyboard experience.
-//                cordova.plugins.Keyboard.disableScroll(true);
-//            }
-//            if (window.StatusBar) {
-//                StatusBar.styleDefault();
-//            }
-//        });
-//    })
-//    .controller('test-ionic', function () {
-//
-//        var ionic = this;
-//        ionic.list = [
-//            {name:'leon', card:'shivan'},
-//            {name:'steven', card: 'ponder'},
-//            {name:'dom', card: 'kamehameha'}
-//        ];
-//    })

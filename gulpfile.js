@@ -28,6 +28,8 @@ gulp.task('index', function () {
         './www/lib/foundation/css/foundation.min.css',
         './www/lib/fontawesome/css/font-awesome.min.css',
         './www/css/dbz.min.css',
+        //'./www/lib/jquery/dist/jquery.min.js',
+        //'./www/lib/foundation/js/foundation.min.js',
         './www/lib/angular/angular.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js',
         './www/lib/ui-router/release/angular-ui-router.min.js',

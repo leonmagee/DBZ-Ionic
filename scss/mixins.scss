@@ -8,5 +8,6 @@
 
   background-image: linear-gradient(lighten($color,5%), darken($color,5%));
   border-color: lighten($color, 10%);
-  text-shadow: 1px 1px lighten($color, 10%);
+  //text-shadow: 1px 1px lighten($color, 10%);
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }

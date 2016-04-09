@@ -4,23 +4,51 @@
 
         <div ng-if="game.start" class="vs-wrap">
 
-            <div class="img-wrap"><img src="../img/personalities/{{ game.player_1.name }}.png"/></div>
-            <div class="img-wrap"><img src="../img/personalities/{{ game.player_2.name }}.png"/></div>
+            <div ng-click="game.scoutClick_1()" class="img-wrap">
+                <div ng-if="game.scouter_1" class="scouter-overlay">
+                    <i class="fa fa-crosshairs"></i>
+
+                    <div class="power">Power Level: <span>9000!</span></div>
+                </div>
+                <img ng-src="../img/personalities/{{ game.player_1.name }}.png"/>
+            </div>
+            <div ng-click="game.scoutClick_2()" class="img-wrap">
+                <div ng-if="game.scouter_2" class="scouter-overlay">
+                    <i class="fa fa-crosshairs"></i>
+
+                    <div class="power">Power Level: <span>9000!</span></div>
+                </div>
+                <img ng-src="../img/personalities/{{ game.player_2.name }}.png"/>
+            </div>
 
             <div class="pushbottom"></div>
 
             <div class="vs-text">
                 <div class="character-info">
                     <div class="name">{{ game.player_1.name }}</div>
-                    <div class="mastery {{ game.mastery_1.mastery }}">{{ game.mastery_1.name }}</div>
+                    <div ng-click="game.setMastery(game.mastery_1.id)" class="mastery {{ game.mastery_1.mastery }}">{{
+                        game.mastery_1.name }}
+                    </div>
                 </div>
                 <div class="just-vs">vs</div>
                 <div class="character-info">
                     <div class="name">{{ game.player_2.name }}</div>
-                    <div class="mastery {{ game.mastery_2.mastery }}">{{ game.mastery_2.name }}</div>
+                    <div ng-click="game.setMastery(game.mastery_2.id)" class="mastery {{ game.mastery_2.mastery }}">{{
+                        game.mastery_2.name }}
+                    </div>
                 </div>
 
                 <div class="pushbottom"></div>
+
+                <!--<div class="mastery-info">-->
+
+                <!--<h4>mastery info</h4>-->
+
+                <!--<ul>-->
+                <!--<li ng-repeat="item in game.masteries[0].status_change.Continuous">{{ item }}</li>-->
+                <!--</ul>-->
+
+                <!--</div>-->
 
                 <div class="button-wrap">
 
@@ -30,16 +58,16 @@
 
             </div>
 
-
-
-
         </div>
 
         <div ng-if="game.start === false">
 
             <div class="dbz-game-start">
 
-            <h3 class="dbz-steps"><div class="circle-number"><span>1</span></div>Choose Personalities</h3>
+                <h3 class="dbz-steps">
+                    <div class="circle-number"><span>1</span></div>
+                    Choose Personalities
+                </h3>
 
                 <div class="small-6 columns">
 
@@ -69,7 +97,10 @@
 
                 </div>
 
-                <h3 class="dbz-steps"><div class="circle-number"><span>2</span></div>Choose Masteries</h3>
+                <h3 class="dbz-steps">
+                    <div class="circle-number"><span>2</span></div>
+                    Choose Masteries
+                </h3>
 
                 <div class="small-6 columns">
 
@@ -111,6 +142,35 @@
 
         </div>
 
+        <div ng-if="game.modalActive" class="dbz-modal">
+
+            <div class="modal-inner">
+
+
+                <h2 ng-class="game.masteryClass">{{ game.masteryTitle }} Effects and Powers</h2>
+
+                <div class="modal-inner-wrap">
+                    <label>Continuous Effects</label>
+                    <ul class="continous-effects">
+                        <li ng-repeat="continuous in game.currentContinuous">{{ continuous }}</li>
+                    </ul>
+                </div>
+                <div ng-if="game.currentPower" class="modal-inner-wrap">
+                    <label>Power Effects</label>
+                    <ul class="power-effects">
+                        <li ng-repeat="continuous in game.currentPower">{{ continuous }}</li>
+                    </ul>
+                </div>
+
+                <i ng-click="game.masteryModal()" class="fa fa-times"></i>
+
+            </div>
+        </div>
+
     </div>
 
 </div>
+
+<!-- modals -->
+
+
