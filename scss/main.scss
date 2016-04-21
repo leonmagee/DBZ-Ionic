@@ -2,10 +2,12 @@ body {
   background-image: linear-gradient(#222, #333);
   //position: relative;
 
-  //.main-content-wrapper {
-  //  background-color: green;
-  //}
-  //
+  .main-content-wrapper {
+    height: 100vh;
+    @include grid-lines(rgba(255, 255, 255, 0.1));
+    background-size: 50px 50px;
+  }
+
   //.home-content-wrapper {
   //
   //  background-color: green;
@@ -28,11 +30,13 @@ body {
     &.full-modal {
 
       width: 100%;
-      height: 100%;
+      height: 100vh;
       border: none;
       padding: 0;
       top: 0;
       left: 0;
+      background-image: none;
+      background-color: #000;
     }
 
     h2 {
@@ -98,10 +102,24 @@ body {
       height: 100%;
 
       i {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-size: 40px;
+
+        &.bottom-right {
+
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          font-size: 40px;
+          color: #EEE;
+        }
+
+        &.attack-table {
+
+          color: green;
+          font-size: 35px;
+          position: absolute;
+          top: 8px;
+          left: 12px;
+        }
       }
     }
   }

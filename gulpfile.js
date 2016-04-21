@@ -27,6 +27,7 @@ gulp.task('index', function () {
     var tmp_src = [
         './www/lib/foundation/css/foundation.min.css',
         './www/lib/fontawesome/css/font-awesome.min.css',
+        './www/lib/flat-icons/flaticon.css',
         './www/css/dbz.min.css',
         //'./www/lib/jquery/dist/jquery.min.js',
         //'./www/lib/foundation/js/foundation.min.js',

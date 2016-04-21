@@ -34,11 +34,37 @@
 
     <div class="small-8 columns main-content-wrapper">
 
-        <div class="dbz-header row">
+        <div ng-controller="header as header"  class="dbz-header row">
 
-            <h1 class="dbz-header-title">
-                <i class="fa fa-star"></i> <span>DBZ</span> Life Tracker <i class="fa fa-star"></i>
-            </h1>
+            <div class="small-1 columns dbz-header-inner">
+                <i class="header-star fa fa-star"></i>
+            </div>
+
+            <div class="small-5 columns dbz-header-inner">
+                <h1 class="dbz-header-title">
+                    <span>DBZ</span> Life Tracker
+                </h1>
+            </div>
+
+            <div class="small-1 columns dbz-header-inner">
+                <i class="header-star fa fa-star"></i>
+            </div>
+
+            <div class="small-5 columns dbz-header-inner">
+                <div class="attack-table-link">
+                    <a ng-click="header.viewAttackTable()"><i class="flaticon-greek"></i>Attack Table</a>
+                </div>
+            </div>
+
+            <div ng-if="header.attackTable" class="dbz-modal full-modal">
+
+                <div class="modal-inner">
+
+                    <div ng-include="'views/attack-table.html'"></div>
+
+                </div>
+
+            </div>
 
         </div>
 

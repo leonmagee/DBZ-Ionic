@@ -166,26 +166,7 @@
                     </ul>
                 </div>
 
-                <i ng-click="game.masteryModal()" class="fa fa-times"></i>
-
-            </div>
-
-        </div>
-
-        <!-- attack table modal -->
-
-
-        <div ng-if="game.attackTable" class="dbz-modal full-modal">
-
-            <div class="modal-inner">
-
-                <div ng-include="'views/attack-table.html'"></div>
-
-                <div class="modal-footer">
-
-                    <i ng-click="game.viewAttackTable()" class="fa fa-times"></i>
-
-                </div>
+                <i ng-click="game.masteryModal()" class="fa fa-times bottom-right"></i>
 
             </div>
 
@@ -193,10 +174,27 @@
 
         <!-- modals -->
 
-    </div>
+    </div><!-- end game controller -->
 
 
-</div>
+    <!-- attack table modal -->
+
+    <!--<div ng-controller="header as header">-->
+
+        <!--<div ng-if="header.attackTable" class="dbz-modal full-modal">-->
+
+            <!--<div class="modal-inner">-->
+
+                <!--<div ng-include="'views/attack-table.html'"></div>-->
+
+            <!--</div>-->
+
+        <!--</div>-->
+
+    <!--</div>-->
+
+
+</div><!-- home content wrapper -->
 
 
 

@@ -72,24 +72,6 @@ angular.module('app', [
         }
 
         /**
-         * Attack Table
-         */
-
-        game.attackTable = true;
-
-        game.viewAttackTable = function () {
-
-            if (game.attackTable === false) {
-
-                game.attackTable = true;
-
-            } else {
-
-                game.attackTable = false;
-            }
-        }
-
-        /**
          * The 'scouter' feature is probably not necessary, since we
          * won't really be tracking the power levels...
          */
@@ -310,6 +292,27 @@ angular.module('app', [
             anger.selected = index;
         };
 
+    })
+    .controller('header', function () {
+
+        var header = this;
+
+        /**
+         * Attack Table
+         */
+        header.attackTable = false;
+
+        header.viewAttackTable = function () {
+
+            if (header.attackTable === false) {
+
+                header.attackTable = true;
+
+            } else {
+
+                header.attackTable = false;
+            }
+        }
     })
     //.controller('test-controller', function () {
     //    var tester = this;
