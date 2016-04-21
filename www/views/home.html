@@ -142,6 +142,10 @@
 
         </div>
 
+        <!-- modals - move do a different template? -->
+
+        <!-- mastery modal -->
+
         <div ng-if="game.modalActive" class="dbz-modal">
 
             <div class="modal-inner">
@@ -165,12 +169,35 @@
                 <i ng-click="game.masteryModal()" class="fa fa-times"></i>
 
             </div>
+
         </div>
+
+        <!-- attack table modal -->
+
+
+        <div ng-if="game.attackTable" class="dbz-modal full-modal">
+
+            <div class="modal-inner">
+
+                <div ng-include="'views/attack-table.html'"></div>
+
+                <div class="modal-footer">
+
+                    <i ng-click="game.viewAttackTable()" class="fa fa-times"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- modals -->
 
     </div>
 
+
 </div>
 
-<!-- modals -->
+
 
 

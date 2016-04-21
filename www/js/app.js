@@ -8,22 +8,28 @@ angular.module('app', [
              *  Start Match (can switch to current match)
              *  Attack Table
              *  Settings
+             *
+             *  This file is incredibly disorganized - I reall need to use different controllers
+             *  to do differnet things. Refactoring this is very important...
+             *
+             *
+             *
              */
             $stateProvider
                 .state('home', {
                     url: '/home',
                     templateUrl: 'views/home.html'
                 });
-            $stateProvider
-                .state('attack-table', {
-                    url: '/attack-table',
-                    templateUrl: 'views/attack-table.html'
-                });
-            $stateProvider
-                .state('settings', {
-                    url: '/settings',
-                    templateUrl: 'views/settings.html'
-                });
+            //$stateProvider
+            //    .state('attack-table', {
+            //        url: '/attack-table',
+            //        templateUrl: 'views/attack-table.html'
+            //    });
+            //$stateProvider
+            //    .state('settings', {
+            //        url: '/settings',
+            //        templateUrl: 'views/settings.html'
+            //    });
 
 
             //.state('home.attack-table', {
@@ -65,24 +71,48 @@ angular.module('app', [
             game.start = false;
         }
 
+        /**
+         * Attack Table
+         */
+
+        game.attackTable = true;
+
+        game.viewAttackTable = function () {
+
+            if (game.attackTable === false) {
+
+                game.attackTable = true;
+
+            } else {
+
+                game.attackTable = false;
+            }
+        }
+
+        /**
+         * The 'scouter' feature is probably not necessary, since we
+         * won't really be tracking the power levels...
+         */
+
         game.scouter_1 = false;
         game.scouter_2 = false;
 
-        game.scoutClick_1 = function() {
+        game.scoutClick_1 = function () {
 
-            if ( game.scouter_1 === false ) {
+            if (game.scouter_1 === false) {
 
                 game.scouter_1 = true;
 
             } else {
+
                 game.scouter_1 = false;
             }
 
         }
 
-        game.scoutClick_2 = function() {
+        game.scoutClick_2 = function () {
 
-            if ( game.scouter_2 === false ) {
+            if (game.scouter_2 === false) {
 
                 game.scouter_2 = true;
 
@@ -158,7 +188,7 @@ angular.module('app', [
         game.player_2 = game.characters[1];
 
 
-        game.setMastery = function(mastery_id) {
+        game.setMastery = function (mastery_id) {
 
             //console.log('mastery click worked');
             //console.log(game.masteries[mastery_id].status_change.Continuous);
@@ -171,9 +201,9 @@ angular.module('app', [
 
         game.modalActive = false;
 
-        game.masteryModal = function() {
+        game.masteryModal = function () {
 
-            if ( game.modalActive === false ) {
+            if (game.modalActive === false) {
 
                 game.modalActive = true;
 
@@ -182,7 +212,6 @@ angular.module('app', [
                 game.modalActive = false;
             }
         }
-
 
         game.masteries = [
             {
@@ -193,7 +222,7 @@ angular.module('app', [
                 image: 'PrS25.jpg',
                 mastery: 'Saiyan',
                 status_change: {
-                    Continuous: [ "Can't win by MPPV", "Saiyan attacks gain +1 anger", "Saiyan HIT attacks gain +3 power stages", "Rejuvenated cards raise your anger +1" ]
+                    Continuous: ["Can't win by MPPV", "Saiyan attacks gain +1 anger", "Saiyan HIT attacks gain +3 power stages", "Rejuvenated cards raise your anger +1"]
                 },
             },
             {
@@ -204,7 +233,7 @@ angular.module('app', [
                 image: 'PrS26.jpg',
                 mastery: 'Orange',
                 status_change: {
-                    Continuous: [ "Drills are not discarded after changing MP level", "Energy attacks gain +1 life card", "If you use critical damage effect during combat, at the end, grab a Styled Drill from your discard pile and put it in play" ]
+                    Continuous: ["Drills are not discarded after changing MP level", "Energy attacks gain +1 life card", "If you use critical damage effect during combat, at the end, grab a Styled Drill from your discard pile and put it in play"]
                 },
             },
             {
@@ -215,7 +244,7 @@ angular.module('app', [
                 image: 'PrS27.jpg',
                 mastery: 'Red',
                 status_change: {
-                    Continuous: [ "Every time you use critical damage effect, raise your anger +1", "If you raise an MP level, draw 1 card and discard 1 card", "If you lower an MP level, draw 1 card" ]
+                    Continuous: ["Every time you use critical damage effect, raise your anger +1", "If you raise an MP level, draw 1 card and discard 1 card", "If you lower an MP level, draw 1 card"]
                 },
             },
             {
@@ -226,8 +255,8 @@ angular.module('app', [
                 image: 'PrS28.jpg',
                 mastery: 'Black',
                 status_change: {
-                    Continuous: [ "Attacks gain +1 life card", "Attacks gain +1 power stage" ],
-                    Power: [ "Discard 1 card from your hand to banish the bottom 2 cards in your opponent's discard pile", "If the discarded card is Styled, you opponent discards a card" ]
+                    Continuous: ["Attacks gain +1 life card", "Attacks gain +1 power stage"],
+                    Power: ["Discard 1 card from your hand to banish the bottom 2 cards in your opponent's discard pile", "If the discarded card is Styled, you opponent discards a card"]
                 },
             },
             {
@@ -238,8 +267,8 @@ angular.module('app', [
                 image: 'PrS29.jpg',
                 mastery: 'Blue',
                 status_change: {
-                    Continuous: [ "Opponent needs 6 anger to raise MP level" ],
-                    Power: [ "Discard 1 Physical Combat card from your hand to block an Energy attack OR Discard 1 Energy Combat card from your hand to block a Physical attack", "If the discarded card is Blue, raise/lower any player's anger +1/-1" ]
+                    Continuous: ["Opponent needs 6 anger to raise MP level"],
+                    Power: ["Discard 1 Physical Combat card from your hand to block an Energy attack OR Discard 1 Energy Combat card from your hand to block a Physical attack", "If the discarded card is Blue, raise/lower any player's anger +1/-1"]
                 },
             },
             {
@@ -250,7 +279,7 @@ angular.module('app', [
                 image: 'PrS30.jpg',
                 mastery: 'Namekian',
                 status_change: {
-                    Continuous: [ "Rejuvenated cards raise your anger +1", "Shuffled cards raise your anger +1", "If you or your opponent play a Dragon Ball, destroy the top card in your opponent's Life Deck", "Your opponent can capture all but 1 of your Dragon Balls you control with a critical damage effect" ]
+                    Continuous: ["Rejuvenated cards raise your anger +1", "Shuffled cards raise your anger +1", "If you or your opponent play a Dragon Ball, destroy the top card in your opponent's Life Deck", "Your opponent can capture all but 1 of your Dragon Balls you control with a critical damage effect"]
                 },
             },
         ];
@@ -282,21 +311,21 @@ angular.module('app', [
         };
 
     })
-    .controller('test-controller', function () {
-        var tester = this;
-
-        tester.people = [
-            {first_name: 'hank', last_name: 'williams'},
-            {first_name: 'steven', last_name: 'pulido'},
-            {first_name: 'frank', last_name: 'underwood'},
-            {first_name: 'jasper', last_name: 'frederick'}
-        ];
-
-        tester.addPerson = function () {
-            tester.people.push({first_name: tester.addFirst, last_name: tester.addLast});
-
-            console.log('click worked');
-
-        }
-    })
+    //.controller('test-controller', function () {
+    //    var tester = this;
+    //
+    //    tester.people = [
+    //        {first_name: 'hank', last_name: 'williams'},
+    //        {first_name: 'steven', last_name: 'pulido'},
+    //        {first_name: 'frank', last_name: 'underwood'},
+    //        {first_name: 'jasper', last_name: 'frederick'}
+    //    ];
+    //
+    //    tester.addPerson = function () {
+    //        tester.people.push({first_name: tester.addFirst, last_name: tester.addLast});
+    //
+    //        console.log('click worked');
+    //
+    //    }
+    //})
 ;
