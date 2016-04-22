@@ -17,10 +17,13 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
+        <div ng-click="anger.select($index)"
+             ng-class="{active: $index == anger.selected}"
+             class="anger-button-wrap"
+             id="anger-button-1"
              ng-repeat="button in anger.buttons_left">
 
-            <div class="rotate-left">
+            <div class="anger-wrapper-inner rotate-left">
 
                 <a ng-click="" ng-class="" class="anger-button" href="#">{{ button }}</a>
 
@@ -69,10 +72,13 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
+        <div ng-click="anger.select($index)"
+             ng-class="{active: $index == anger.selected}"
+             class="anger-button-wrap"
+             fix-height
              ng-repeat="button in anger.buttons_right">
 
-            <div class="rotate-right">
+            <div class="anger-wrapper-inner rotate-right">
 
                 <a ng-click="" ng-class="" class="anger-button" href="#">{{ button }}</a>
 

@@ -193,11 +193,6 @@ angular.module('app', [
         game.mastery_1 = game.masteries[0];
         game.mastery_2 = game.masteries[1];
     })
-    //.controller('player_info', function () {
-    //    var player = this;
-    //
-    //    player.defaults = {id: 0, character: 'Goku'};
-    //})
     .controller('anger', function () {
         var anger = this;
 
@@ -215,6 +210,11 @@ angular.module('app', [
             //console.log('select worked ' + index);
             anger.selected = index;
         };
+
+        //var clientHeight = document.getElementById('anger-button-1').clientHeight;
+        //console.log(clientHeight);
+        //anger.button_height = $('.anger-button-wrap').height();
+        //console.log(anger.button_height );
 
     })
     .controller('header', function () {
@@ -238,4 +238,21 @@ angular.module('app', [
             }
         }
     })
+    .directive('fixHeight', function () {
+
+        return {
+            link: function (scope, element, attr) {
+
+                //var elementHeight = element[0].offsetHeight;
+                //console.log(elementHeight);
+                //
+                //var myEl = angular.element(element[0].querySelector('a'));
+                //console.log(myEl);
+                //myEl.css('line-height', elementHeight + 'px');
+
+            }
+        }
+    })
+
+
 ;
