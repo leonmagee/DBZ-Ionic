@@ -21,8 +21,7 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
-             ng-repeat="button in anger.buttons_left">
+        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap" ng-repeat="button in anger.buttons_left">
 
             <div class="rotate-left">
 
@@ -38,25 +37,19 @@
 
     <div class="small-8 columns main-content-wrapper">
 
-        <div ng-controller="header as header"  class="dbz-header row">
+        <div ng-controller="header as header" class="dbz-header row">
 
-            <div class="small-1 columns dbz-header-inner">
-                <i class="header-star fa fa-star"></i>
-            </div>
-
-            <div class="small-5 columns dbz-header-inner">
+            <div class="small-8 columns dbz-header-inner">
                 <h1 class="dbz-header-title">
+                    <i class="header-star fa fa-star"></i>
                     <span>DBZ</span> Life Tracker
+                    <i class="header-star fa fa-star"></i>
                 </h1>
             </div>
 
-            <div class="small-1 columns dbz-header-inner">
-                <i class="header-star fa fa-star"></i>
-            </div>
-
-            <div class="small-5 columns dbz-header-inner">
+            <div class="small-4 columns dbz-header-inner">
                 <div class="attack-table-link">
-                    <a ng-click="header.viewAttackTable()"><i class="flaticon-greek"></i>Attack Table</a>
+                    <a ng-click="header.viewAttackTable()"><i class="flaticon-greek"></i><span>Attack Table</span></a>
                 </div>
             </div>
 
@@ -64,7 +57,7 @@
 
                 <div class="modal-inner">
 
-                    <div ng-include="'views/attack-table.html'"></div>
+                    <div ng-include="&apos;views/attack-table.html&apos;"></div>
 
                 </div>
 
@@ -73,14 +66,13 @@
         </div>
 
         <!-- main content area -->
-        <div ui-view></div>
+        <div ui-view=""></div>
 
     </div>
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap"
-             ng-repeat="button in anger.buttons_right">
+        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap" ng-repeat="button in anger.buttons_right">
 
             <div class="rotate-right">
 

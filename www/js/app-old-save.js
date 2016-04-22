@@ -2,31 +2,107 @@ angular.module('app', [
         'ui.router'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
+            /**
+             *  this will need to be changed to reflect what I'm doing. To start I will
+             *  have one menu and one main content area, which will toggle between
+             *  Start Match (can switch to current match)
+             *  Attack Table
+             *  Settings
+             *
+             *  This file is incredibly disorganized - I reall need to use different controllers
+             *  to do differnet things. Refactoring this is very important...
+             *
+             *
+             *
+             */
             $stateProvider
                 .state('home', {
                     url: '/home',
                     templateUrl: 'views/home.html'
                 });
+            //$stateProvider
+            //    .state('attack-table', {
+            //        url: '/attack-table',
+            //        templateUrl: 'views/attack-table.html'
+            //    });
+            //$stateProvider
+            //    .state('settings', {
+            //        url: '/settings',
+            //        templateUrl: 'views/settings.html'
+            //    });
+
+
+            //.state('home.attack-table', {
+            //    url: '/attack-table',
+            //    templateUrl: 'app/views/attack-table.html'
+            //})
+            //.state('home.settings', {
+            //    url: '/settings',
+            //    templateUrl: 'app/views/settings.html'
+            //});
+            //.state('settings.profile', {
+            //    url: '/profile',
+            //    templateUrl: 'app/views/profile.html'
+            //});
+            //.state('settings.account', {
+            //    url: '/account',
+            //    templateUrl: 'app/views/account.html'
+            //});
             $urlRouterProvider.otherwise('/home')
+
         }
     )
     .controller('game', function () {
-
+        /**
+         * This will be switched to pull data from a WordPress site using the REST api
+         * I need to create a site to
+         */
         var game = this;
 
         game.start = false;
 
         game.startMatch = function () {
+
             game.start = true;
-        };
+        }
 
         game.resetMatch = function () {
+
             game.start = false;
-        };
+        }
 
         /**
-         * The data should be moved somewhere else
+         * The 'scouter' feature is probably not necessary, since we
+         * won't really be tracking the power levels...
          */
+
+        //game.scouter_1 = false;
+        //game.scouter_2 = false;
+        //
+        //game.scoutClick_1 = function () {
+        //
+        //    if (game.scouter_1 === false) {
+        //
+        //        game.scouter_1 = true;
+        //
+        //    } else {
+        //
+        //        game.scouter_1 = false;
+        //    }
+        //
+        //}
+        //
+        //game.scoutClick_2 = function () {
+        //
+        //    if (game.scouter_2 === false) {
+        //
+        //        game.scouter_2 = true;
+        //
+        //    } else {
+        //        game.scouter_2 = false;
+        //    }
+        //}
+
         game.characters = [
             {
                 id: 0,
@@ -90,14 +166,19 @@ angular.module('app', [
             }
         ];
 
-        /**
-         * Set default characters
-         */
         game.player_1 = game.characters[0];
         game.player_2 = game.characters[1];
 
+        //../img/personalities/{{ game.player_1.name }}.png
+
+        game.player_1.image_url = '../img/personalities/' + game.player_1.name + '.png';
+
+        console.log(game.player_1.image_url);
+
         game.setMastery = function (mastery_id) {
 
+            //console.log('mastery click worked');
+            //console.log(game.masteries[mastery_id].status_change.Continuous);
             game.masteryTitle = game.masteries[mastery_id].name;
             game.masteryClass = game.masteries[mastery_id].mastery;
             game.currentContinuous = game.masteries[mastery_id].status_change.Continuous;
@@ -238,4 +319,21 @@ angular.module('app', [
             }
         }
     })
+    //.controller('test-controller', function () {
+    //    var tester = this;
+    //
+    //    tester.people = [
+    //        {first_name: 'hank', last_name: 'williams'},
+    //        {first_name: 'steven', last_name: 'pulido'},
+    //        {first_name: 'frank', last_name: 'underwood'},
+    //        {first_name: 'jasper', last_name: 'frederick'}
+    //    ];
+    //
+    //    tester.addPerson = function () {
+    //        tester.people.push({first_name: tester.addFirst, last_name: tester.addLast});
+    //
+    //        console.log('click worked');
+    //
+    //    }
+    //})
 ;
