@@ -21,11 +21,7 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)"
-             ng-class="{active: $index == anger.selected}"
-             class="anger-button-wrap"
-             id="anger-button-1"
-             ng-repeat="button in anger.buttons_left">
+        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap" update-line-height="" ng-repeat="button in anger.buttons_left">
 
             <div class="anger-wrapper-inner rotate-left">
 
@@ -41,7 +37,7 @@
 
     <div class="small-8 columns main-content-wrapper">
 
-        <div ng-controller="header as header"  class="dbz-header row">
+        <div ng-controller="header as header" class="dbz-header row">
 
             <div class="small-8 columns dbz-header-inner">
                 <h1 class="dbz-header-title">
@@ -61,7 +57,7 @@
 
                 <div class="modal-inner">
 
-                    <div ng-include="'views/attack-table.html'"></div>
+                    <div ng-include="&apos;views/attack-table.html&apos;"></div>
 
                 </div>
 
@@ -70,17 +66,13 @@
         </div>
 
         <!-- main content area -->
-        <div ui-view></div>
+        <div ui-view=""></div>
 
     </div>
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)"
-             ng-class="{active: $index == anger.selected}"
-             class="anger-button-wrap"
-             fix-height
-             ng-repeat="button in anger.buttons_right">
+        <div ng-click="anger.select($index)" ng-class="{active: $index == anger.selected}" class="anger-button-wrap" update-line-height="" ng-repeat="button in anger.buttons_right">
 
             <div class="anger-wrapper-inner rotate-right">
 

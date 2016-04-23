@@ -20,7 +20,7 @@
         <div ng-click="anger.select($index)"
              ng-class="{active: $index == anger.selected}"
              class="anger-button-wrap"
-             id="anger-button-1"
+             update-line-height
              ng-repeat="button in anger.buttons_left">
 
             <div class="anger-wrapper-inner rotate-left">
@@ -75,7 +75,7 @@
         <div ng-click="anger.select($index)"
              ng-class="{active: $index == anger.selected}"
              class="anger-button-wrap"
-             fix-height
+             update-line-height
              ng-repeat="button in anger.buttons_right">
 
             <div class="anger-wrapper-inner rotate-right">

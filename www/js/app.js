@@ -238,14 +238,15 @@ angular.module('app', [
             }
         }
     })
-    .directive('fixHeight', function () {
+    .directive('updateLineHeight', function () {
 
         return {
             link: function (scope, element, attr) {
 
+                console.log('yeps');
                 //var elementHeight = element[0].offsetHeight;
                 //console.log(elementHeight);
-                //
+
                 //var myEl = angular.element(element[0].querySelector('a'));
                 //console.log(myEl);
                 //myEl.css('line-height', elementHeight + 'px');

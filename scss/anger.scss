@@ -2,26 +2,20 @@
 
   height: 100vh;
   //background-color: #111;
-  //background-image: url('../img/bgs/carbon_fibre.png');
+  background-image: url('../img/bgs/carbon_fibre.png');
+  background-color: red;
   padding: 0;
 
   .anger-button-wrap {
 
     height: 20%;
-    //border: 2px solid #444;
     border-bottom: none;
     width: 100%;
-    //position: relative;
     text-align: center;
-    background: #111 url('../img/bgs/anger-button-bg.png') no-repeat center;
+    background-image: url('../img/bgs/anger-button-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: auto 100%;
-    //padding-top: 0.2em;
-
-    //.anger-wrapper-inner {
-    //
-    //  //display: inline-block;
-    //  //color: red;
-    //}
 
     a.anger-button {
 
