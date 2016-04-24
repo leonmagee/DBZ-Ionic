@@ -1,19 +1,19 @@
 // game play select
-.dbz-game-start {
+.dbz-game-start { // a lot of this can be removed if I'm not using a select field
 
   //text-align: center;
-  padding-top: 30px;
+  //padding-top: 30px;
   //@include grid-lines(rgba(255, 255, 255, 0.1));
   //background-size: 50px 50px;
   //height: 450px;
 
-  .dbz-steps {
+  h3.dbz-steps {
 
     color: #EEE;
     //text-align: center;
     font-size: 17px;
     text-transform: uppercase;
-    padding: 5px;
+    padding: 15px 0;
     text-align: center;
   }
 
@@ -25,17 +25,17 @@
     color: rgba(255, 255, 255, 0.8);
   }
 
-  select {
-
-    padding: 5px;
-    height: 30px;
-    background-color: #CCC;
-
-    &.masteries {
-
-      font-size: 12px;
-    }
-  }
+  //select {
+  //
+  //  padding: 5px;
+  //  height: 30px;
+  //  background-color: #CCC;
+  //
+  //  &.masteries {
+  //
+  //    font-size: 12px;
+  //  }
+  //}
 
   .button-wrap {
 

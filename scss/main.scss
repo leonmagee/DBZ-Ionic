@@ -126,3 +126,47 @@ body {
 
 }
 
+// should go to a different file
+
+.personality-column {
+
+  padding: 10px 30px 30px;
+  border-top: 2px solid $green-trans-border-color;
+  border-bottom: 2px solid $green-trans-border-color;
+
+  &.one {
+
+    border-right: 1px solid $green-trans-border-color;
+  }
+
+  &.two {
+
+    border-left: 1px solid $green-trans-border-color;
+  }
+}
+
+.personality-wrap { // .small-6
+
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.personality-item {
+
+  padding: 5px;
+  color: #FFF;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin: 5px 0;
+  text-align: center;
+  cursor: pointer;
+
+  &.active {
+    background-color: rgba(0,255,0,0.2);
+    border-color: rgba(0,255,0,0.3);
+  }
+}
+

@@ -2,6 +2,8 @@
 
     <div class="row" ng-controller="game as game">
 
+        <!-- vs area -->
+
         <div ng-if="game.start" class="vs-wrap">
 
             <div class="img-wrap">
@@ -41,45 +43,74 @@
 
         </div>
 
-        <div ng-if="game.start === false">
+        <!-- end vs area -->
 
-            <div class="dbz-game-start">
+
+        <!-- game start area -->
+
+        <!--<div ng-if="game.start === false">-->
+
+        <div class="dbz-game-start">
+
+
+            <div ng-if="game.personality === true">
 
                 <h3 class="dbz-steps">
-                    <div class="circle-number"><span>1</span></div>
-                    Choose Personalities
+                    <!--<div class="circle-number"><span>1</span></div>-->
+                    Choose Your Personality
                 </h3>
 
-                <div class="small-6 columns">
+                <div class="small-6 columns personality-column one">
 
-                    <h4>Personality One</h4>
+                    <h4>Player One</h4>
 
-                    <form>
+                    <div class="row">
 
-                        <select name="character" ng-model="game.player_1"
-                                ng-options="character as character.name for character in game.characters">
-                        </select>
+                        <!--ng-click="anger.select_left($index)"-->
+                        <!--ng-class="{active: $index == anger.selected_left}"-->
 
-                    </form>
+                        <div class="small-6 columns personality-wrap"
+                             ng-repeat="character in game.characters"
+                             ng-model="game.player_1">
+                            <div class="personality-item"
+                                 ng-class="{active: $index == game.selected_one}"
+                                 ng-click="game.select_one($index)">
+                                {{ character.name }}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="small-6 columns personality-column two">
+
+                    <h4>Player Two</h4>
+
+                    <div class="row">
+
+                        <div class="small-6 columns personality-wrap"
+                             ng-repeat="character in game.characters"
+                             ng-model="game.player_2">
+                            <div class="personality-item"
+                                 ng-class="{active: $index == game.selected_two}"
+                                 ng-click="game.select_two($index)">
+                                {{ character.name }}
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="small-6 columns">
 
-                    <h4>Personality Two</h4>
+            </div><!-- end ng-if personality -->
 
-                    <form>
+            <div ng-if="game.mastery === true">
 
-                        <select name="character" ng-model="game.player_2"
-                                ng-options="character as character.name for character in game.characters">
-                        </select>
-
-                    </form>
-
-                </div>
 
                 <h3 class="dbz-steps">
-                    <div class="circle-number"><span>2</span></div>
+                    <!--<div class="circle-number"><span>2</span></div>-->
                     Choose Masteries
                 </h3>
 
@@ -111,17 +142,20 @@
 
                 </div>
 
-                <div class="pushbottom"></div>
+            </div><!-- end ng-if mastery -->
 
-                <div class="button-wrap">
+            <div class="pushbottom"></div>
 
-                    <a class="button" ng-click="game.startMatch()">Start</a>
+            <div class="button-wrap">
 
-                </div>
+                <a class="button" ng-click="game.startMatch()">Start</a>
 
             </div>
 
         </div>
+
+        <!--</div>-->
+
 
         <!-- modals - move do a different template? -->
 

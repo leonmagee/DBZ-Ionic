@@ -14,13 +14,33 @@ angular.module('app', [
 
         var game = this;
 
+
+        /**
+         * Instead of having a game.start boolean I should have screen stage number?
+         * 1) Choose Personalities
+         * 2) Choose Materies
+         * 3) Play game
+         */
+
+        game.personality = true;
+        game.mastery = false;
         game.start = false;
 
+        game.setMasteries = function () {
+            game.personality = false;
+            game.mastery = true;
+            game.start = false;
+        };
+
         game.startMatch = function () {
+            game.personality = false;
+            game.mastery = false;
             game.start = true;
         };
 
         game.resetMatch = function () {
+            game.personality = true;
+            game.mastery = false;
             game.start = false;
         };
 
@@ -95,6 +115,28 @@ angular.module('app', [
          */
         game.player_1 = game.characters[0];
         game.player_2 = game.characters[1];
+
+
+        //"{active: $index == character.selected_one}"
+        //ng-click="character.select_one($index)"
+
+        //game.selected_one = 0;
+        //game.selected_two = 0;
+
+        game.select_one = function ($index) {
+
+            game.selected_one = $index;
+            game.player_1 = game.characters[$index];
+            console.log(game.characters[$index]);
+        };
+
+        game.select_two = function ($index) {
+
+            game.selected_two = $index;
+            game.player_2 = game.characters[$index];
+            console.log(game.characters[$index]);
+        };
+
 
         game.setMastery = function (mastery_id) {
 
@@ -194,27 +236,22 @@ angular.module('app', [
         game.mastery_2 = game.masteries[1];
     })
     .controller('anger', function () {
-        var anger = this;
-
         /**
          *  Set Anger Buttons
          *  This may change based on the main personality and mastery
-         *  I need to find a way to assign a class based on angular?
          */
+        var anger = this;
         anger.buttons_left = [1, 2, 3, 4, 5];
         anger.buttons_right = [5, 4, 3, 2, 1];
+        anger.selected_left = 0;
+        anger.selected_right = 4;
 
-        anger.selected = 0;
-
-        anger.select = function (index) {
-            //console.log('select worked ' + index);
-            anger.selected = index;
+        anger.select_left = function (index) {
+            anger.selected_left = index;
         };
-
-        //var clientHeight = document.getElementById('anger-button-1').clientHeight;
-        //console.log(clientHeight);
-        //anger.button_height = $('.anger-button-wrap').height();
-        //console.log(anger.button_height );
+        anger.select_right = function (index) {
+            anger.selected_right = index;
+        };
 
     })
     .controller('header', function () {
@@ -240,20 +277,17 @@ angular.module('app', [
     })
     .directive('updateLineHeight', function () {
 
+        /**
+         * Change line height
+         */
         return {
             link: function (scope, element, attr) {
 
-                console.log('yeps');
-                //var elementHeight = element[0].offsetHeight;
-                //console.log(elementHeight);
+                var elementHeight = element[0].offsetHeight;
+                var anger_button = angular.element(element[0].querySelector('a'));
 
-                //var myEl = angular.element(element[0].querySelector('a'));
-                //console.log(myEl);
-                //myEl.css('line-height', elementHeight + 'px');
-
+                anger_button.css('line-height', elementHeight + 'px');
             }
         }
     })
-
-
 ;

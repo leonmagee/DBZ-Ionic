@@ -17,8 +17,8 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)"
-             ng-class="{active: $index == anger.selected}"
+        <div ng-click="anger.select_left($index)"
+             ng-class="{active: $index == anger.selected_left}"
              class="anger-button-wrap"
              update-line-height
              ng-repeat="button in anger.buttons_left">
@@ -72,8 +72,8 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select($index)"
-             ng-class="{active: $index == anger.selected}"
+        <div ng-click="anger.select_right($index)"
+             ng-class="{active: $index == anger.selected_right}"
              class="anger-button-wrap"
              update-line-height
              ng-repeat="button in anger.buttons_right">
