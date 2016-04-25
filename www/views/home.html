@@ -113,11 +113,11 @@
 
                 <div class="small-6 columns personality-column one">
 
-                    <h4>Player One</h4>
+                    <h4>Mastery One</h4>
 
                     <div class="character_info"
                          ng-repeat="mastery in game.masteries">
-                        <div class="mastery_item"
+                        <div class="mastery-item"
                              ng-class="[mastery.mastery, {active: $index == game.mastery_selected_one}]"
                              ng-click="game.mastery_select_one($index)">
                             {{ mastery.name }}
@@ -128,11 +128,11 @@
 
                 <div class="small-6 columns personality-column two">
 
-                    <h4>Player Two</h4>
+                    <h4>Mastery Two</h4>
 
                     <div class="character_info"
                          ng-repeat="mastery in game.masteries">
-                        <div class="mastery_item"
+                        <div class="mastery-item"
                              ng-class="[mastery.mastery, {active: $index == game.mastery_selected_two}]"
                              ng-click="game.mastery_select_two($index)">
                             {{ mastery.name }}
@@ -164,7 +164,7 @@
 
             <div class="modal-inner">
 
-                <h2 ng-class="game.masteryClass">{{ game.masteryTitle }} Effects and Powers</h2>
+                <h2 ng-class="game.masteryClass">{{ game.masteryTitle }}</h2>
 
                 <div class="modal-inner-wrap">
                     <label>Continuous Effects</label>
@@ -172,6 +172,7 @@
                         <li ng-repeat="continuous in game.currentContinuous">{{ continuous }}</li>
                     </ul>
                 </div>
+
                 <div ng-if="game.currentPower" class="modal-inner-wrap">
                     <label>Power Effects</label>
                     <ul class="power-effects">
@@ -179,7 +180,7 @@
                     </ul>
                 </div>
 
-                <i ng-click="game.masteryModal()" class="fa fa-times bottom-right"></i>
+                <i ng-click="game.masteryModal()" class="flaticon-delete bottom-right"></i>
 
             </div>
 

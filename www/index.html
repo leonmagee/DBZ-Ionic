@@ -21,11 +21,7 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select_left($index)"
-             ng-class="{active: $index == anger.selected_left}"
-             class="anger-button-wrap"
-             update-line-height
-             ng-repeat="button in anger.buttons_left">
+        <div ng-click="anger.select_left($index)" ng-class="{active: $index == anger.selected_left}" class="anger-button-wrap" update-line-height="" ng-repeat="button in anger.buttons_left">
 
             <div class="anger-wrapper-inner rotate-left">
 
@@ -45,14 +41,14 @@
             <div class="dbz-header-inner">
                 <h1 class="dbz-header-title">
                     <!--<i class="header-star fa fa-star"></i>-->
-                    <span>DBZ</span>Life<img src="img/logo/dragon-ball.png" />Tracker
+                    <span>DBZ</span>Life<img src="img/logo/dragon-ball.png">Tracker
                     <!--<i class="header-star fa fa-star"></i>-->
                 </h1>
             </div>
         </div>
 
         <!-- main content area -->
-        <div ui-view></div>
+        <div ui-view=""></div>
 
         <!-- ui view references that is the home page - this routing is probably
         not real necessary since we don't need to navigate with routes -->
@@ -61,7 +57,7 @@
 
             <div class="modal-inner">
 
-                <div ng-include="'views/attack-table.html'"></div>
+                <div ng-include="&apos;views/attack-table.html&apos;"></div>
 
             </div>
 
@@ -91,11 +87,7 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select_right($index)"
-             ng-class="{active: $index == anger.selected_right}"
-             class="anger-button-wrap"
-             update-line-height
-             ng-repeat="button in anger.buttons_right">
+        <div ng-click="anger.select_right($index)" ng-class="{active: $index == anger.selected_right}" class="anger-button-wrap" update-line-height="" ng-repeat="button in anger.buttons_right">
 
             <div class="anger-wrapper-inner rotate-right">
 

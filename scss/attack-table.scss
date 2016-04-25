@@ -1,5 +1,10 @@
 .attack-table-wrap {
 
+  i {
+
+    margin: 3px 0 0 3px;
+  }
+
   .attack-table {
 
     table {
@@ -48,4 +53,10 @@
   }
 }
 
+.flaticon-delete {
 
+  &:before {
+
+    margin-left: 0;
+  }
+}
