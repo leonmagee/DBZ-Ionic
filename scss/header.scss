@@ -5,66 +5,80 @@
 }
 
 .dbz-header {
-  background-color: #111;
-  padding: 5px 0 9px;
-  border: 1px solid #444;
+  //background-color: #111;
+  padding: 3px 0;
+  //border: 1px solid #444;
   //background-image: url('../img/bgs/inflicted.png');
   //background-image: url('../img/bgs/crossed_stripes.png');
   //background-image: url('../img/bgs/carbon_fibre.png');
+
+  img {
+    width: 33px;
+    margin: 0 3px;
+  }
+
 }
 
 h1.dbz-header-title {
   margin: 7px 0 0;
   font-size: 1.7em;
-  color: orange;
+  color: lighten(green, 5%);
   text-transform: uppercase;
   font-family: SaiyanFont;
   width: 100%;
-}
 
-h1.dbz-header-title span {
+  span {
 
-  color: red;
-}
-
-i.header-star {
-
-  background-color: red;
-  color: orange;
-  padding: 5px;
-  font-size: 0.7em;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  vertical-align: middle;
-  //margin-top: 10px;
-  //margin-top: -2.5px;
-}
-
-.attack-table-link {
-
-  font-size: 0.9em;
-  margin-top: 8px;
-  text-transform: uppercase;
-  font-family: SaiyanFont;
-  //vertical-align: middle;
-
-  a {
-    color: orange;
-
-    span {
-
-      vertical-align: middle;
-    }
+    color: darken(orange, 4%);
+    margin-right: 3px;
   }
 
-  i {
-
-    margin-right: 8px;
-    color: red;
-    font-size: 0.8em;
-    vertical-align: middle;
-  }
 }
+
+//h1.dbz-header-title span {
+//
+//  color: darken(orange, 3%);
+//  margin-right: 3px;
+//}
+
+//i.header-star {
+//
+//  background-color: red;
+//  color: orange;
+//  padding: 5px;
+//  font-size: 0.7em;
+//  border: 1px solid rgba(0, 0, 0, 0.1);
+//  border-radius: 50%;
+//  vertical-align: middle;
+//  //margin-top: 10px;
+//  //margin-top: -2.5px;
+//}
+//
+//.attack-table-link {
+//
+//  font-size: 0.9em;
+//  margin-top: 8px;
+//  text-transform: uppercase;
+//  font-family: SaiyanFont;
+//  //vertical-align: middle;
+//
+//  a {
+//    color: orange;
+//
+//    span {
+//
+//      vertical-align: middle;
+//    }
+//  }
+//
+//  i {
+//
+//    margin-right: 8px;
+//    color: red;
+//    font-size: 0.8em;
+//    vertical-align: middle;
+//  }
+//}
 
 .dbz-header-inner {
 

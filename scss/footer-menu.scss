@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100%;
   padding: 8px 0;
-  background-color: #333;
+  background-color: #222;
   border-top: 1px solid #444;
 
   .footer-menu-inner {
@@ -13,6 +13,15 @@
     .columns {
 
       text-align: center;
+    }
+
+    a {
+
+      color: rgba(0,255,0,0.5);
+      //color: green;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      //font-weight: bold;
     }
 
 

@@ -303,6 +303,23 @@ angular.module('app', [
         //game.mastery_1 = game.masteries[0];
         game.mastery_selected_one = 69;
         game.mastery_selected_two = 69;
+
+        /**
+         * Attack Table
+         */
+        game.attackTable = false;
+
+        game.viewAttackTable = function () {
+
+            if (game.attackTable === false) {
+
+                game.attackTable = true;
+
+            } else {
+
+                game.attackTable = false;
+            }
+        }
     })
     .controller('anger', function () {
         /**
@@ -322,27 +339,6 @@ angular.module('app', [
             anger.selected_right = index;
         };
 
-    })
-    .controller('header', function () {
-
-        var header = this;
-
-        /**
-         * Attack Table
-         */
-        header.attackTable = false;
-
-        header.viewAttackTable = function () {
-
-            if (header.attackTable === false) {
-
-                header.attackTable = true;
-
-            } else {
-
-                header.attackTable = false;
-            }
-        }
     })
     .directive('updateLineHeight', function () {
 

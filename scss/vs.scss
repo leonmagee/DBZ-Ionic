@@ -19,10 +19,13 @@
 
   h4 {
 
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
+    background-color: #141414;
+    border: 1px solid #070707;
+    padding: 3px 0;
   }
 
   //select {
@@ -45,6 +48,13 @@
 }
 
 // game play section with images
+
+.vs-wrap-outer {
+
+  background-color: #111;
+  border-top: 2px solid #333;
+}
+
 .vs-wrap {
 
   @include grid-lines(rgba(0, 255, 0, 0.3));
@@ -99,10 +109,10 @@
 
   .vs-text {
 
-    //background-color: #333;
+    background-color: #1A1A1A;
     height: 200px;
     position: relative;
-    background-image: url('../img/bgs/rubber_grip.png');
+    //background-image: url('../img/bgs/rubber_grip.png');
 
     .character-info {
 

@@ -33,34 +33,18 @@
 
     </div>
 
-    <div class="small-8 columns main-content-wrapper">
+    <div ng-controller="game as game" class="small-8 columns main-content-wrapper">
 
-        <div ng-controller="header as header"  class="dbz-header row">
+        <div class="dbz-header">
 
-            <div class="small-8 columns dbz-header-inner">
+            <!--<img src="img/logo/generated-logo.png" />-->
+            <div class="dbz-header-inner">
                 <h1 class="dbz-header-title">
-                    <i class="header-star fa fa-star"></i>
-                    <span>DBZ</span> Life Tracker
-                    <i class="header-star fa fa-star"></i>
+                    <!--<i class="header-star fa fa-star"></i>-->
+                    <span>DBZ</span>Life<img src="img/logo/dragon-ball.png" />Tracker
+                    <!--<i class="header-star fa fa-star"></i>-->
                 </h1>
             </div>
-
-            <div class="small-4 columns dbz-header-inner">
-                <div class="attack-table-link">
-                    <a ng-click="header.viewAttackTable()"><i class="flaticon-greek"></i><span>Attack Table</span></a>
-                </div>
-            </div>
-
-            <div ng-if="header.attackTable" class="dbz-modal full-modal">
-
-                <div class="modal-inner">
-
-                    <div ng-include="'views/attack-table.html'"></div>
-
-                </div>
-
-            </div>
-
         </div>
 
         <!-- main content area -->
@@ -69,20 +53,33 @@
         <!-- ui view references that is the home page - this routing is probably
         not real necessary since we don't need to navigate with routes -->
 
+        <div ng-if="game.attackTable" class="dbz-modal full-modal">
+
+            <div class="modal-inner">
+
+                <div ng-include="'views/attack-table.html'"></div>
+
+            </div>
+
+        </div>
+
         <div class="footer-menu-area">
 
             <div class="footer-menu-inner row">
 
                 <div class="small-6 columns">
-                    <a href="#">Attack Table</a>
+                    <div class="attack-table-link">
+                        <a ng-click="game.viewAttackTable()">Attack Table</a>
+                    </div>
                 </div>
 
                 <div class="small-6 columns">
-                    <a href="#">Reset</a>
+
+                    <a ng-click="game.resetMatch()">Reset</a>
+
                 </div>
 
             </div>
-
 
         </div>
 
