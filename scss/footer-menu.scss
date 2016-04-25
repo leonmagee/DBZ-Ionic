@@ -3,9 +3,17 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: red;
+  width: 100%;
+  padding: 8px 0;
+  background-color: #333;
+  border-top: 1px solid #444;
 
   .footer-menu-inner {
+
+    .columns {
+
+      text-align: center;
+    }
 
 
   }
