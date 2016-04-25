@@ -13,37 +13,6 @@ angular.module('app', [
     .controller('game', function () {
 
         var game = this;
-
-
-        /**
-         * Instead of having a game.start boolean I should have screen stage number?
-         * 1) Choose Personalities
-         * 2) Choose Materies
-         * 3) Play game
-         */
-
-        game.personality = true;
-        game.mastery = false;
-        game.start = false;
-
-        game.setMasteries = function () {
-            game.personality = false;
-            game.mastery = true;
-            game.start = false;
-        };
-
-        game.startMatch = function () {
-            game.personality = false;
-            game.mastery = false;
-            game.start = true;
-        };
-
-        game.resetMatch = function () {
-            game.personality = true;
-            game.mastery = false;
-            game.start = false;
-        };
-
         /**
          * The data should be moved somewhere else
          */
@@ -109,57 +78,6 @@ angular.module('app', [
                 level4: [0, 5000, 50000, 100000, 150000, 250000, 350000, 450000, 550000, 650000, 750000]
             }
         ];
-
-        /**
-         * Set default characters
-         */
-        game.player_1 = game.characters[0];
-        game.player_2 = game.characters[1];
-
-
-        //"{active: $index == character.selected_one}"
-        //ng-click="character.select_one($index)"
-
-        //game.selected_one = 0;
-        //game.selected_two = 0;
-
-        game.select_one = function ($index) {
-
-            game.selected_one = $index;
-            game.player_1 = game.characters[$index];
-            console.log(game.characters[$index]);
-        };
-
-        game.select_two = function ($index) {
-
-            game.selected_two = $index;
-            game.player_2 = game.characters[$index];
-            console.log(game.characters[$index]);
-        };
-
-
-        game.setMastery = function (mastery_id) {
-
-            game.masteryTitle = game.masteries[mastery_id].name;
-            game.masteryClass = game.masteries[mastery_id].mastery;
-            game.currentContinuous = game.masteries[mastery_id].status_change.Continuous;
-            game.currentPower = game.masteries[mastery_id].status_change.Power;
-            game.masteryModal();
-        }
-
-        game.modalActive = false;
-
-        game.masteryModal = function () {
-
-            if (game.modalActive === false) {
-
-                game.modalActive = true;
-
-            } else {
-
-                game.modalActive = false;
-            }
-        }
 
         game.masteries = [
             {
@@ -232,8 +150,159 @@ angular.module('app', [
             },
         ];
 
-        game.mastery_1 = game.masteries[0];
-        game.mastery_2 = game.masteries[1];
+
+
+        /**
+         * Instead of having a game.start boolean I should have screen stage number?
+         * 1) Choose Personalities
+         * 2) Choose Materies
+         * 3) Play game
+         */
+
+        game.personality = true;
+        game.mastery = false;
+        game.start = false;
+        game.spinner_section = false;
+
+        // maybe not necessary?
+        //game.setMasteries = function () {
+        //    game.personality = false;
+        //    game.mastery = true;
+        //    game.start = false;
+        //};
+
+        // maybe not necessary?
+        //game.startMatch = function () {
+        //    game.personality = false;
+        //    game.mastery = false;
+        //    game.start = true;
+        //};
+
+        game.resetMatch = function () {
+            game.personality = true;
+            game.mastery = false;
+            game.start = false;
+            game.selected_one = 69;
+            game.selected_two = 69;
+            game.mastery_selected_one = 69;
+            game.mastery_selected_two = 69;
+        };
+
+        /**
+         * Set default characters
+         */
+        game.player_1 = game.characters[0];
+        game.player_2 = game.characters[1];
+
+        /**
+         * Set default selected states
+         */
+        game.selected_one = 69;
+        game.selected_two = 69;
+
+        game.switch_to_mastery = function () {
+
+            game.personality = false;
+            game.mastery = true;
+            game.spinner_section = false;
+
+            setTimeout(function () {
+
+                    game.spinner_section = false;
+                    game.mastery = true;
+                    //game.$apply();
+                },
+
+                2000);
+        };
+
+        game.switch_to_game = function () {
+
+            game.personality = false;
+            game.mastery = false;
+            game.start = true;
+            game.spinner_section = false;
+
+            //setTimeout(function () {
+            //
+            //        game.spinner_section = false;
+            //        game.mastery = true;
+            //        //game.$apply();
+            //    },
+            //
+            //    2000);
+        };
+
+        game.select_one = function ($index) {
+
+            game.selected_one = $index;
+            game.player_1 = game.characters[$index];
+
+            if (game.selected_two !== 69) {
+                game.switch_to_mastery();
+            }
+        };
+
+        game.select_two = function ($index) {
+
+            game.selected_two = $index;
+            game.player_2 = game.characters[$index];
+
+            if (game.selected_one !== 69) {
+                game.switch_to_mastery();
+            }
+        };
+
+        game.setMastery = function (mastery_id) {
+
+            game.masteryTitle = game.masteries[mastery_id].name;
+            game.masteryClass = game.masteries[mastery_id].mastery;
+            game.currentContinuous = game.masteries[mastery_id].status_change.Continuous;
+            game.currentPower = game.masteries[mastery_id].status_change.Power;
+            game.masteryModal();
+        };
+
+        game.modalActive = false;
+
+        game.masteryModal = function () {
+
+            if (game.modalActive === false) {
+
+                game.modalActive = true;
+
+            } else {
+
+                game.modalActive = false;
+            }
+        };
+
+        game.mastery_select_one = function ($index) {
+
+            game.mastery_selected_one = $index;
+            game.mastery_1 = game.masteries[$index];
+
+            if (game.mastery_selected_two !== 69) {
+                game.switch_to_game();
+            }
+        };
+
+        game.mastery_select_two = function ($index) {
+
+            game.mastery_selected_two = $index;
+            game.mastery_2 = game.masteries[$index];
+
+            if (game.mastery_selected_one !== 69) {
+                game.switch_to_game();
+            }
+        };
+
+        /**
+         * Set default masteries??? Prob shouldn't do this...
+         */
+        //game.mastery_1 = game.masteries[0];
+        //game.mastery_1 = game.masteries[0];
+        game.mastery_selected_one = 69;
+        game.mastery_selected_two = 69;
     })
     .controller('anger', function () {
         /**
@@ -285,8 +354,8 @@ angular.module('app', [
 
                 var elementHeight = element[0].offsetHeight;
                 var anger_button = angular.element(element[0].querySelector('a'));
-
-                anger_button.css('line-height', elementHeight + 'px');
+                // not working on ionic ios???
+                //anger_button.css('line-height', elementHeight + 'px');
             }
         }
     })

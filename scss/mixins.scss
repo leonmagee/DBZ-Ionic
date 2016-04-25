@@ -11,3 +11,9 @@
   //text-shadow: 1px 1px lighten($color, 10%);
   text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
+
+@mixin gradient-bg-mastery-default($color : #333 ) {
+
+  background-image: linear-gradient(lighten($color,5%), darken($color,5%));
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
+}

@@ -7,7 +7,8 @@
         <div ng-if="game.start" class="vs-wrap">
 
             <div class="img-wrap">
-                <img ng-src="/img/personalities/{{ game.player_1.name }}.png"/>
+                <!--<img ng-src="/img/personalities/{{ game.player_1.name }}.png"/>-->
+                <img ng-src="/img/personalities/goku.png"/>
             </div>
 
             <div class="img-wrap">
@@ -41,6 +42,11 @@
 
             </div>
 
+        </div><!-- end ng-if game.start -->
+
+
+        <div ng-if="game.spinner_section" class="spinner-wrap">
+                <i class="fa fa-circle-o-notch fa-spin"></i>
         </div>
 
         <!-- end vs area -->
@@ -103,42 +109,41 @@
 
                 </div>
 
-
             </div><!-- end ng-if personality -->
 
             <div ng-if="game.mastery === true">
 
-
                 <h3 class="dbz-steps">
-                    <!--<div class="circle-number"><span>2</span></div>-->
                     Choose Masteries
                 </h3>
 
-                <div class="small-6 columns">
+                <div class="small-6 columns personality-column one">
 
-                    <h4>Mastery One</h4>
+                    <h4>Player One</h4>
 
-                    <form>
-
-                        <select name="mastery" ng-model="game.mastery_1" class="masteries"
-                                ng-options="mastery as mastery.name for mastery in game.masteries">
-                        </select>
-
-                    </form>
+                    <div class="character_info"
+                         ng-repeat="mastery in game.masteries">
+                        <div class="mastery_item"
+                             ng-class="[mastery.mastery, {active: $index == game.mastery_selected_one}]"
+                             ng-click="game.mastery_select_one($index)">
+                            {{ mastery.name }}
+                        </div>
+                    </div>
 
                 </div>
 
-                <div class="small-6 columns">
+                <div class="small-6 columns personality-column two">
 
-                    <h4>Mastery Two</h4>
+                    <h4>Player Two</h4>
 
-                    <form>
-
-                        <select name="mastery" ng-model="game.mastery_2" class="masteries"
-                                ng-options="mastery as mastery.name for mastery in game.masteries">
-                        </select>
-
-                    </form>
+                    <div class="character_info"
+                         ng-repeat="mastery in game.masteries">
+                        <div class="mastery_item"
+                             ng-class="[mastery.mastery, {active: $index == game.mastery_selected_two}]"
+                             ng-click="game.mastery_select_two($index)">
+                            {{ mastery.name }}
+                        </div>
+                    </div>
 
                 </div>
 
@@ -146,11 +151,11 @@
 
             <div class="pushbottom"></div>
 
-            <div class="button-wrap">
+            <!--<div class="button-wrap" ng-if="game.mastery">-->
 
-                <a class="button" ng-click="game.startMatch()">Start</a>
+                <!--<a class="button" ng-click="game.startMatch()">Start</a>-->
 
-            </div>
+            <!--</div>-->
 
         </div>
 

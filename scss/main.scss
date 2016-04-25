@@ -4,7 +4,8 @@ body {
 
   .main-content-wrapper {
     height: 100vh;
-    @include grid-lines(rgba(255, 255, 255, 0.1));
+    //@include grid-lines(rgba(255, 255, 255, 0.1));
+    @include grid-lines(rgba(255, 255, 255, 0.07));
     background-size: 50px 50px;
   }
 
@@ -56,17 +57,17 @@ body {
 
       &.Red {
 
-        color: darken( $red-mastery, 1%);
+        color: darken($red-mastery, 1%);
       }
 
       &.Blue {
 
-        color: darken( $blue-mastery, 1%);
+        color: darken($blue-mastery, 1%);
       }
 
       &.Black {
 
-        color: darken( $black-mastery, 1%);
+        color: darken($black-mastery, 1%);
       }
 
       &.Saiyan {
@@ -165,8 +166,78 @@ body {
   cursor: pointer;
 
   &.active {
-    background-color: rgba(0,255,0,0.2);
-    border-color: rgba(0,255,0,0.3);
+    background-color: rgba(0, 255, 0, 0.2);
+    border-color: rgba(0, 255, 0, 0.3);
   }
+}
+
+.spinner-wrap {
+
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 30%;
+
+    i {
+      font-size: 7em;
+      color: rgba(0, 255, 0, 0.2);
+    }
+}
+
+// also in vs file
+
+.mastery_item {
+
+  padding: 5px 10px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #555;
+  @include gradient-bg-mastery-default(#222);
+
+  //border: 2px solid red !important;
+
+  &.active {
+
+    &.Orange {
+
+      @include gradient-bg-mastery($orange-mastery);
+    }
+
+    &.Red {
+
+      @include gradient-bg-mastery($red-mastery);
+    }
+
+    &.Blue {
+
+      @include gradient-bg-mastery($blue-mastery);
+    }
+
+    &.Black {
+
+      @include gradient-bg-mastery($black-mastery);
+    }
+
+    &.Saiyan {
+
+      @include gradient-bg-mastery($saiyan-mastery);
+    }
+
+    &.Namekian {
+
+      @include gradient-bg-mastery($namekian-mastery);
+    }
+
+  }
+
 }
 
