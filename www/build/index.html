@@ -31,8 +31,6 @@
 
         </div>
 
-        <option ng-repeat="character in character.characters">{{ character.name }}</option>
-
     </div>
 
     <div class="small-8 columns main-content-wrapper">
@@ -68,6 +66,18 @@
         <!-- main content area -->
         <div ui-view></div>
 
+        <!-- ui view references that is the home page - this routing is probably
+        not real necessary since we don't need to navigate with routes -->
+
+        <div class="footer-menu-area">
+
+            <div class="footer-menu-inner">
+
+                <a href="#">Attack Table</a>
+                <a href="#">Reset</a>
+            </div>
+        </div>
+
     </div>
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
@@ -85,8 +95,6 @@
             </div>
 
         </div>
-
-        <option ng-repeat="character in character.characters">{{ character.name }}</option>
 
     </div>
 

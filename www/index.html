@@ -21,7 +21,11 @@
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select_left($index)" ng-class="{active: $index == anger.selected_left}" class="anger-button-wrap" update-line-height="" ng-repeat="button in anger.buttons_left">
+        <div ng-click="anger.select_left($index)"
+             ng-class="{active: $index == anger.selected_left}"
+             class="anger-button-wrap"
+             update-line-height
+             ng-repeat="button in anger.buttons_left">
 
             <div class="anger-wrapper-inner rotate-left">
 
@@ -31,13 +35,11 @@
 
         </div>
 
-        <option ng-repeat="character in character.characters">{{ character.name }}</option>
-
     </div>
 
     <div class="small-8 columns main-content-wrapper">
 
-        <div ng-controller="header as header" class="dbz-header row">
+        <div ng-controller="header as header"  class="dbz-header row">
 
             <div class="small-8 columns dbz-header-inner">
                 <h1 class="dbz-header-title">
@@ -57,7 +59,7 @@
 
                 <div class="modal-inner">
 
-                    <div ng-include="&apos;views/attack-table.html&apos;"></div>
+                    <div ng-include="'views/attack-table.html'"></div>
 
                 </div>
 
@@ -66,13 +68,29 @@
         </div>
 
         <!-- main content area -->
-        <div ui-view=""></div>
+        <div ui-view></div>
+
+        <!-- ui view references that is the home page - this routing is probably
+        not real necessary since we don't need to navigate with routes -->
+
+        <div class="footer-menu-area">
+
+            <div class="footer-menu-inner">
+
+                <a href="#">Attack Table</a>
+                <a href="#">Reset</a>
+            </div>
+        </div>
 
     </div>
 
     <div ng-controller="anger as anger" class="small-2 columns anger-wrapper">
 
-        <div ng-click="anger.select_right($index)" ng-class="{active: $index == anger.selected_right}" class="anger-button-wrap" update-line-height="" ng-repeat="button in anger.buttons_right">
+        <div ng-click="anger.select_right($index)"
+             ng-class="{active: $index == anger.selected_right}"
+             class="anger-button-wrap"
+             update-line-height
+             ng-repeat="button in anger.buttons_right">
 
             <div class="anger-wrapper-inner rotate-right">
 
@@ -81,8 +99,6 @@
             </div>
 
         </div>
-
-        <option ng-repeat="character in character.characters">{{ character.name }}</option>
 
     </div>
 
